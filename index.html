@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ProTrainers Academy - Professional business training and development solutions">
+    <meta name="keywords" content="business training, professional development, corporate training, leadership">
+    <title>ProTrainers Academy - Professional Business Training</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#64748b',
+                        accent: '#0ea5e9'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-primary" data-page="home">ProTrainers Academy</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#" class="nav-link text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium" data-page="home" data-en="Home" data-de="Startseite">Home</a>
+                        <a href="#" class="nav-link text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium" data-page="trainers" data-en="Trainers" data-de="Trainer">Trainers</a>
+                        <a href="#" class="nav-link text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium" data-page="method" data-en="Our Method" data-de="Unsere Methode">Our Method</a>
+                        <a href="#" class="nav-link text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium" data-page="resources" data-en="Resources" data-de="Ressourcen">Resources</a>
+                        <a href="#" class="nav-link text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium" data-page="contact" data-en="Contact" data-de="Kontakt">Contact</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="lang-toggle" class="bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded text-sm font-medium">
+                        <span class="lang-en">🇩🇪 DE</span>
+                        <span class="lang-de hidden">🇺🇸 EN</span>
+                    </button>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-secondary hover:text-primary">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="nav-link block text-secondary hover:text-primary px-3 py-2 rounded-md text-base font-medium" data-page="home" data-en="Home" data-de="Startseite">Home</a>
+                <a href="#" class="nav-link block text-secondary hover:text-primary px-3 py-2 rounded-md text-base font-medium" data-page="trainers" data-en="Trainers" data-de="Trainer">Trainers</a>
+                <a href="#" class="nav-link block text-secondary hover:text-primary px-3 py-2 rounded-md text-base font-medium" data-page="method" data-en="Our Method" data-de="Unsere Methode">Our Method</a>
+                <a href="#" class="nav-link block text-secondary hover:text-primary px-3 py-2 rounded-md text-base font-medium" data-page="resources" data-en="Resources" data-de="Ressourcen">Resources</a>
+                <a href="#" class="nav-link block text-secondary hover:text-primary px-3 py-2 rounded-md text-base font-medium" data-page="contact" data-en="Contact" data-de="Kontakt">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main id="main-content">
+        <!-- Home Page -->
+        <div id="home-page" class="page active">
+            <!-- Hero Section -->
+            <section class="bg-gradient-to-r from-primary to-accent text-white py-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6" data-en="Transform Your Business Through Expert Training" data-de="Transformieren Sie Ihr Unternehmen durch Expertentraining">Transform Your Business Through Expert Training</h1>
+                    <p class="text-xl md:text-2xl mb-8 opacity-90" data-en="We deliver world-class professional development programs that drive real results for your organization" data-de="Wir bieten erstklassige Weiterbildungsprogramme, die echte Ergebnisse für Ihr Unternehmen erzielen">We deliver world-class professional development programs that drive real results for your organization</p>
+                    <div class="space-x-4">
+                        <button class="nav-link bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300" data-page="contact" data-en="Get Started Today" data-de="Jetzt Anfangen">Get Started Today</button>
+                        <button class="nav-link border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition duration-300" data-page="method" data-en="Learn Our Method" data-de="Unsere Methode Kennenlernen">Learn Our Method</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trust Indicators -->
+            <section class="py-16 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-gray-900" data-en="Trusted by Leading Organizations" data-de="Vertraut von führenden Organisationen">Trusted by Leading Organizations</h2>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
+                        <div class="text-center text-gray-500 font-semibold">TechCorp</div>
+                        <div class="text-center text-gray-500 font-semibold">Innovation Ltd</div>
+                        <div class="text-center text-gray-500 font-semibold">GlobalSoft</div>
+                        <div class="text-center text-gray-500 font-semibold">FutureTech</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Benefits -->
+            <section class="py-16 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-gray-900" data-en="Why Choose ProTrainers Academy?" data-de="Warum ProTrainers Academy wählen?">Why Choose ProTrainers Academy?</h2>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl">🎯</span>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-4" data-en="Proven Results" data-de="Bewährte Ergebnisse">Proven Results</h3>
+                            <p class="text-gray-600" data-en="Our training programs have helped over 500 companies achieve measurable improvements in performance and productivity." data-de="Unsere Trainingsprogramme haben über 500 Unternehmen dabei geholfen, messbare Verbesserungen in Leistung und Produktivität zu erzielen.">Our training programs have helped over 500 companies achieve measurable improvements in performance and productivity.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl">👥</span>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-4" data-en="Expert Trainers" data-de="Experten-Trainer">Expert Trainers</h3>
+                            <p class="text-gray-600" data-en="Learn from industry veterans with 15+ years of experience in business development and organizational transformation." data-de="Lernen Sie von Branchenveteranen mit über 15 Jahren Erfahrung in Geschäftsentwicklung und Organisationstransformation.">Learn from industry veterans with 15+ years of experience in business development and organizational transformation.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl">🔧</span>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-4" data-en="Customized Solutions" data-de="Maßgeschneiderte Lösungen">Customized Solutions</h3>
+                            <p class="text-gray-600" data-en="Every training program is tailored to your specific industry, challenges, and organizational goals." data-de="Jedes Trainingsprogramm ist auf Ihre spezifische Branche, Herausforderungen und Organisationsziele zugeschnitten.">Every training program is tailored to your specific industry, challenges, and organizational goals.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="py-16 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-gray-900" data-en="What Our Clients Say" data-de="Was unsere Kunden sagen">What Our Clients Say</h2>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <p class="text-gray-600 mb-4 italic" data-en="The training transformed our team's productivity by 40%. The practical approach and expert guidance made all the difference." data-de="Das Training steigerte die Produktivität unseres Teams um 40%. Der praktische Ansatz und die Expertenberatung machten den entscheidenden Unterschied.">"The training transformed our team's productivity by 40%. The practical approach and expert guidance made all the difference."</p>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                                <div>
+                                    <p class="font-semibold">Sarah Johnson</p>
+                                    <p class="text-sm text-gray-500">CEO, TechCorp</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <p class="text-gray-600 mb-4 italic" data-en="Outstanding results! Our leadership team gained valuable skills that we use daily. Highly recommend ProTrainers Academy." data-de="Hervorragende Ergebnisse! Unser Führungsteam hat wertvolle Fähigkeiten erworben, die wir täglich nutzen. Sehr empfehlenswert.">"Outstanding results! Our leadership team gained valuable skills that we use daily. Highly recommend ProTrainers Academy."</p>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                                <div>
+                                    <p class="font-semibold">Michael Chen</p>
+                                    <p class="text-sm text-gray-500">Director, Innovation Ltd</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="py-16 bg-primary text-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 class="text-3xl font-bold mb-6" data-en="Ready to Transform Your Organization?" data-de="Bereit, Ihre Organisation zu transformieren?">Ready to Transform Your Organization?</h2>
+                    <p class="text-xl mb-8 opacity-90" data-en="Schedule a free consultation to discuss your training needs" data-de="Vereinbaren Sie ein kostenloses Beratungsgespräch, um Ihre Trainingsbedürfnisse zu besprechen">Schedule a free consultation to discuss your training needs</p>
+                    <button class="nav-link bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300" data-page="contact" data-en="Schedule Consultation" data-de="Beratung Vereinbaren">Schedule Consultation</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Other pages will be added here -->
+        <div id="trainers-page" class="page hidden">
+            <div class="py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h1 class="text-4xl font-bold text-center mb-12" data-en="Our Expert Trainers" data-de="Unsere Experten-Trainer">Our Expert Trainers</h1>
+                    <p class="text-center text-gray-600 mb-16" data-en="Meet the professionals who will guide your transformation" data-de="Lernen Sie die Profis kennen, die Ihre Transformation leiten werden">Meet the professionals who will guide your transformation</p>
+                    
+                    <!-- Trainers Grid -->
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                        <!-- Trainer 1 -->
+                        <div class="team-card">
+                            <div class="h-64 bg-gray-200 flex items-center justify-center">
+                                <span class="text-6xl">👨‍💼</span>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Dr. Michael Weber</h3>
+                                <p class="text-primary font-medium mb-3" data-en="Senior Leadership Consultant" data-de="Senior Leadership-Berater">Senior Leadership Consultant</p>
+                                <p class="text-gray-600 text-sm mb-4" data-en="20+ years in executive coaching and organizational development. Former VP at Fortune 500 companies." data-de="Über 20 Jahre Erfahrung in Executive Coaching und Organisationsentwicklung. Ehemaliger VP bei Fortune-500-Unternehmen.">20+ years in executive coaching and organizational development. Former VP at Fortune 500 companies.</p>
+                                <div class="text-sm text-gray-500">
+                                    <p data-en="Specialties:" data-de="Spezialisierung:">Specialties:</p>
+                                    <ul class="list-disc list-inside mt-1">
+                                        <li data-en="Leadership Development" data-de="Führungskräfteentwicklung">Leadership Development</li>
+                                        <li data-en="Change Management" data-de="Change Management">Change Management</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Trainer 2 -->
+                        <div class="team-card">
+                            <div class="h-64 bg-gray-200 flex items-center justify-center">
+                                <span class="text-6xl">👩‍💼</span>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Sarah Mitchell</h3>
+                                <p class="text-primary font-medium mb-3" data-en="Communication Expert" data-de="Kommunikations-Expertin">Communication Expert</p>
+                                <p class="text-gray-600 text-sm mb-4" data-en="International speaker and author. Expert in cross-cultural communication and team dynamics." data-de="Internationale Rednerin und Autorin. Expertin für interkulturelle Kommunikation und Teamdynamik.">International speaker and author. Expert in cross-cultural communication and team dynamics.</p>
+                                <div class="text-sm text-gray-500">
+                                    <p data-en="Specialties:" data-de="Spezialisierung:">Specialties:</p>
+                                    <ul class="list-disc list-inside mt-1">
+                                        <li data-en="Team Building" data-de="Teambuilding">Team Building</li>
+                                        <li data-en="Presentation Skills" data-de="Präsentationsfähigkeiten">Presentation Skills</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Trainer 3 -->
+                        <div class="team-card">
+                            <div class="h-64 bg-gray-200 flex items-center justify-center">
+                                <span class="text-6xl">👨‍🏫</span>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Prof. David Chen</h3>
+                                <p class="text-primary font-medium mb-3" data-en="Strategy & Innovation" data-de="Strategie & Innovation">Strategy & Innovation</p>
+                                <p class="text-gray-600 text-sm mb-4" data-en="Harvard MBA, former McKinsey consultant. Specializes in digital transformation and innovation frameworks." data-de="Harvard MBA, ehemaliger McKinsey-Berater. Spezialisiert auf digitale Transformation und Innovationsrahmen.">Harvard MBA, former McKinsey consultant. Specializes in digital transformation and innovation frameworks.</p>
+                                <div class="text-sm text-gray-500">
+                                    <p data-en="Specialties:" data-de="Spezialisierung:">Specialties:</p>
+                                    <ul class="list-disc list-inside mt-1">
+                                        <li data-en="Digital Strategy" data-de="Digitale Strategie">Digital Strategy</li>
+                                        <li data-en="Innovation Process" data-de="Innovationsprozesse">Innovation Process</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Philosophy -->
+                    <div class="bg-gray-50 rounded-lg p-8">
+                        <h2 class="text-2xl font-bold text-center mb-6" data-en="Our Training Philosophy" data-de="Unsere Trainingsphilosophie">Our Training Philosophy</h2>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="text-center">
+                                <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <span class="text-xl">🎯</span>
+                                </div>
+                                <h3 class="font-semibold mb-2" data-en="Results-Focused" data-de="Ergebnisorientiert">Results-Focused</h3>
+                                <p class="text-sm text-gray-600" data-en="Every session is designed to deliver measurable outcomes" data-de="Jede Sitzung ist darauf ausgelegt, messbare Ergebnisse zu liefern">Every session is designed to deliver measurable outcomes</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <span class="text-xl">🤝</span>
+                                </div>
+                                <h3 class="font-semibold mb-2" data-en="Collaborative" data-de="Kollaborativ">Collaborative</h3>
+                                <p class="text-sm text-gray-600" data-en="We work alongside your team, not just present to them" data-de="Wir arbeiten mit Ihrem Team zusammen, nicht nur vor ihnen">We work alongside your team, not just present to them</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <span class="text-xl">📈</span>
+                                </div>
+                                <h3 class="font-semibold mb-2" data-en="Continuous Growth" data-de="Kontinuierliches Wachstum">Continuous Growth</h3>
+                                <p class="text-sm text-gray-600" data-en="Support extends beyond training sessions" data-de="Unterstützung erstreckt sich über Trainingseinheiten hinaus">Support extends beyond training sessions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="method-page" class="page hidden">
+            <div class="py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h1 class="text-4xl font-bold text-center mb-12" data-en="Our Proven Method" data-de="Unsere bewährte Methode">Our Proven Method</h1>
+                    <p class="text-center text-gray-600 mb-16" data-en="A systematic approach to organizational transformation" data-de="Ein systematischer Ansatz zur Organisationstransformation">A systematic approach to organizational transformation</p>
+                    
+                    <!-- Method Overview -->
+                    <div class="bg-gradient-to-r from-primary to-accent text-white rounded-lg p-8 mb-16">
+                        <div class="text-center">
+                            <h2 class="text-2xl font-bold mb-4" data-en="The TRANSFORM Framework" data-de="Das TRANSFORM Framework">The TRANSFORM Framework</h2>
+                            <p class="text-lg opacity-90" data-en="Our proprietary 7-step methodology for sustainable organizational change" data-de="Unsere firmeneigene 7-Schritte-Methodik für nachhaltigen organisatorischen Wandel">Our proprietary 7-step methodology for sustainable organizational change</p>
+                        </div>
+                    </div>
+
+                    <!-- Method Steps -->
+                    <div class="space-y-12">
+                        <!-- Step 1 -->
+                        <div class="method-step flex flex-col md:flex-row items-start gap-6">
+                            <div class="flex-shrink-0">
+                                <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold">T</div>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-xl font-semibold mb-3" data-en="Target Assessment" data-de="Zielanalyse">Target Assessment</h3>
+                                <p class="text-gray-600 mb-4" data-en="Comprehensive analysis of your current organizational state, identifying strengths, gaps, and opportunities for improvement." data-de="Umfassende Analyse Ihres aktuellen Organisationszustands, Identifizierung von Stärken, Lücken und Verbesserungsmöglichkeiten.">Comprehensive analysis of your current organizational state, identifying strengths, gaps, and opportunities for improvement.</p>
+                                <ul class="text-sm text-gray-500 list-disc list-inside">
+                                    <li data-en="Leadership capability assessment" data-de="Bewertung der Führungskompetenzen">Leadership capability assessment</li>
+                                    <li data-en="Team dynamics evaluation" data-de="Bewertung der Teamdynamik">Team dynamics evaluation</li>
+                                    <li data-en="Process efficiency analysis" data-de="Analyse der Prozesseffizienz">Process efficiency analysis</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="method-step flex flex-col md:flex-row items-start gap-6">
+                            <div class="flex-shrink-0">
+                                <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold">R</div>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-xl font-semibold mb-3" data-en="Roadmap Development" data-de="Roadmap-Entwicklung">Roadmap Development</h3>
+                                <p class="text-gray-600 mb-4" data-en="Creating a customized transformation roadmap with clear milestones, timelines, and success metrics." data-de="Erstellung einer maßgeschneiderten Transformations-Roadmap mit klaren Meilensteinen, Zeitplänen und Erfolgsmetriken.">Creating a customized transformation roadmap with clear milestones, timelines, and success metrics.</p>
+                                <ul class="text-sm text-gray-500 list-disc list-inside">
+                                    <li data-en="Strategic goal alignment" data-de="Strategische Zielausrichtung">Strategic goal alignment</li>
+                                    <li data-en="Priority initiative mapping" data-de="Priorisierung von Initiativen">Priority initiative mapping</li>
+                                    <li data-en="Resource allocation planning" data-de="Planung der Ressourcenzuteilung">Resource allocation planning</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="method-step flex flex-col md:flex-row items-start gap-6">
+                            <div class="flex-shrink-0">
+                                <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold">A</div>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-xl font-semibold mb-3" data-en="Activation & Training" data-de="Aktivierung & Training">Activation & Training</h3>
+                                <p class="text-gray-600 mb-4" data-en="Intensive skill-building sessions focused on the specific competencies your organization needs to develop." data-de="Intensive Kompetenzaufbau-Sitzungen, die sich auf die spezifischen Kompetenzen konzentrieren, die Ihre Organisation entwickeln muss.">Intensive skill-building sessions focused on the specific competencies your organization needs to develop.</p>
+                                <ul class="text-sm text-gray-500 list-disc list-inside">
+                                    <li data-en="Interactive workshops" data-de="Interaktive Workshops">Interactive workshops</li>
+                                    <li data-en="Hands-on practice sessions" data-de="Praktische Übungssitzungen">Hands-on practice sessions</li>
+                                    <li data-en="Peer learning groups" data-de="Peer-Learning-Gruppen">Peer learning groups</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="method-step flex flex-col md:flex-row items-start gap-6">
+                            <div class="flex-shrink-0">
+                                <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold">N</div>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-xl font-semibold mb-3" data-en="Navigation Support" data-de="Navigationsunterstützung">Navigation Support</h3>
+                                <p class="text-gray-600 mb-4" data-en="Ongoing coaching and guidance to help your team navigate challenges and maintain momentum during implementation." data-de="Kontinuierliches Coaching und Anleitung, um Ihrem Team bei der Bewältigung von Herausforderungen und der Aufrechterhaltung des Schwungs während der Umsetzung zu helfen.">Ongoing coaching and guidance to help your team navigate challenges and maintain momentum during implementation.</p>
+                                <ul class="text-sm text-gray-500 list-disc list-inside">
+                                    <li data-en="Weekly check-ins" data-de="Wöchentliche Check-ins">Weekly check-ins</li>
+                                    <li data-en="Problem-solving support" data-de="Problemlösungsunterstützung">Problem-solving support</li>
+                                    <li data-en="Adjustment recommendations" data-de="Anpassungsempfehlungen">Adjustment recommendations</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Step 5 -->
+                        <div class="method-step flex flex-col md:flex-row items-start gap-6">
+                            <div class="flex-shrink-0">
+                                <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold">S</div>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-xl font-semibold mb-3" data-en="Systematic Implementation" data-de="Systematische Umsetzung">Systematic Implementation</h3>
+                                <p class="text-gray-600 mb-4" data-en="Structured rollout of new processes, tools, and behaviors across your organization with careful change management." data-de="Strukturierte Einführung neuer Prozesse, Tools und Verhaltensweisen in Ihrer Organisation mit sorgfältigem Change Management.">Structured rollout of new processes, tools, and behaviors across your organization with careful change management.</p>
+                                <ul class="text-sm text-gray-500 list-disc list-inside">
+                                    <li data-en="Phased implementation" data-de="Phasenweise Umsetzung">Phased implementation</li>
+                                    <li data-en="Communication strategy" data-de="Kommunikationsstrategie">Communication strategy</li>
+                                    <li data-en="Resistance management" data-de="Widerstandsmanagement">Resistance management</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Step 6 -->
+                        <div class="method-step flex flex-col md:flex-row items-start gap-6">
+                            <div class="flex-shrink-0">
+                                <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold">F</div>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-xl font-semibold mb-3" data-en="Follow-up & Reinforcement" data-de="Nachverfolgung & Verstärkung">Follow-up & Reinforcement</h3>
+                                <p class="text-gray-600 mb-4" data-en="Continuous monitoring and reinforcement activities to ensure new behaviors stick and improvements are sustained." data-de="Kontinuierliche Überwachung und Verstärkungsaktivitäten, um sicherzustellen, dass neue Verhaltensweisen beibehalten und Verbesserungen nachhaltig sind.">Continuous monitoring and reinforcement activities to ensure new behaviors stick and improvements are sustained.</p>
+                                <ul class="text-sm text-gray-500 list-disc list-inside">
+                                    <li data-en="Progress tracking" data-de="Fortschrittsverfolgung">Progress tracking</li>
+                                    <li data-en="Refresher sessions" data-de="Auffrischungssitzungen">Refresher sessions</li>
+                                    <li data-en="Success celebration" data-de="Erfolg feiern">Success celebration</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Step 7 -->
+                        <div class="method-step flex flex-col md:flex-row items-start gap-6">
+                            <div class="flex-shrink-0">
+                                <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold">O</div>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-xl font-semibold mb-3" data-en="Optimization & Growth" data-de="Optimierung & Wachstum">Optimization & Growth</h3>
+                                <p class="text-gray-600 mb-4" data-en="Final optimization phase focusing on continuous improvement and preparing your organization for future challenges." data-de="Finale Optimierungsphase mit Fokus auf kontinuierliche Verbesserung und Vorbereitung Ihrer Organisation auf zukünftige Herausforderungen.">Final optimization phase focusing on continuous improvement and preparing your organization for future challenges.</p>
+                                <ul class="text-sm text-gray-500 list-disc list-inside">
+                                    <li data-en="Performance optimization" data-de="Leistungsoptimierung">Performance optimization</li>
+                                    <li data-en="Future-readiness assessment" data-de="Zukunftsfähigkeitsbewertung">Future-readiness assessment</li>
+                                    <li data-en="Self-sufficiency development" data-de="Entwicklung der Selbstständigkeit">Self-sufficiency development</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Results Section -->
+                    <div class="bg-gray-50 rounded-lg p-8 mt-16">
+                        <h2 class="text-2xl font-bold text-center mb-8" data-en="Expected Outcomes" data-de="Erwartete Ergebnisse">Expected Outcomes</h2>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary mb-2">40%</div>
+                                <p class="text-sm" data-en="Average productivity increase" data-de="Durchschnittliche Produktivitätssteigerung">Average productivity increase</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary mb-2">85%</div>
+                                <p class="text-sm" data-en="Employee engagement improvement" data-de="Verbesserung des Mitarbeiterengagements">Employee engagement improvement</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary mb-2">60%</div>
+                                <p class="text-sm" data-en="Faster decision-making" data-de="Schnellere Entscheidungsfindung">Faster decision-making</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary mb-2">95%</div>
+                                <p class="text-sm" data-en="Client satisfaction rate" data-de="Kundenzufriedenheitsrate">Client satisfaction rate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="resources-page" class="page hidden">
+            <div class="py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h1 class="text-4xl font-bold text-center mb-12" data-en="Training Resources" data-de="Trainingsressourcen">Training Resources</h1>
+                    <p class="text-center text-gray-600 mb-16" data-en="Tools and materials to support your learning journey" data-de="Tools und Materialien zur Unterstützung Ihres Lernweges">Tools and materials to support your learning journey</p>
+                    
+                    <!-- Resource Categories -->
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                        <!-- Assessments -->
+                        <div class="resource-card">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center mr-4">
+                                    <span class="text-xl">📊</span>
+                                </div>
+                                <h3 class="text-xl font-semibold" data-en="Assessment Tools" data-de="Bewertungstools">Assessment Tools</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4" data-en="Comprehensive evaluation instruments to measure your organization's current capabilities." data-de="Umfassende Bewertungsinstrumente zur Messung der aktuellen Fähigkeiten Ihrer Organisation.">Comprehensive evaluation instruments to measure your organization's current capabilities.</p>
+                            <ul class="text-sm space-y-2">
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                                    <span data-en="Leadership Readiness Assessment" data-de="Führungsbereitschaftsbewertung">Leadership Readiness Assessment</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                                    <span data-en="Team Dynamics Evaluation" data-de="Teamdynamik-Bewertung">Team Dynamics Evaluation</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                                    <span data-en="Organizational Culture Audit" data-de="Organisationskultur-Audit">Organizational Culture Audit</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Workbooks -->
+                        <div class="resource-card">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center mr-4">
+                                    <span class="text-xl">📚</span>
+                                </div>
+                                <h3 class="text-xl font-semibold" data-en="Learning Workbooks" data-de="Lern-Arbeitsbücher">Learning Workbooks</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4" data-en="Structured learning materials with exercises, templates, and practical applications." data-de="Strukturierte Lernmaterialien mit Übungen, Vorlagen und praktischen Anwendungen.">Structured learning materials with exercises, templates, and practical applications.</p>
+                            <ul class="text-sm space-y-2">
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                                    <span data-en="Leadership Excellence Guide" data-de="Leitfaden für Führungsexzellenz">Leadership Excellence Guide</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                                    <span data-en="Communication Mastery Workbook" data-de="Kommunikationsmeisterschaft-Arbeitsbuch">Communication Mastery Workbook</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                                    <span data-en="Change Management Toolkit" data-de="Change-Management-Toolkit">Change Management Toolkit</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Digital Tools -->
+                        <div class="resource-card">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center mr-4">
+                                    <span class="text-xl">💻</span>
+                                </div>
+                                <h3 class="text-xl font-semibold" data-en="Digital Platform" data-de="Digitale Plattform">Digital Platform</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4" data-en="Online learning portal with interactive modules, progress tracking, and collaboration tools." data-de="Online-Lernportal mit interaktiven Modulen, Fortschrittsverfolgung und Kollaborationstools.">Online learning portal with interactive modules, progress tracking, and collaboration tools.</p>
+                            <ul class="text-sm space-y-2">
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                                    <span data-en="Video Learning Library" data-de="Video-Lernbibliothek">Video Learning Library</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                                    <span data-en="Progress Tracking Dashboard" data-de="Fortschritts-Dashboard">Progress Tracking Dashboard</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                                    <span data-en="Peer Collaboration Space" data-de="Peer-Kollaborationsraum">Peer Collaboration Space</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Templates -->
+                        <div class="resource-card">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center mr-4">
+                                    <span class="text-xl">📋</span>
+                                </div>
+                                <h3 class="text-xl font-semibold" data-en="Templates & Frameworks" data-de="Vorlagen & Rahmenwerke">Templates & Frameworks</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4" data-en="Ready-to-use templates and frameworks to accelerate implementation in your organization." data-de="Sofort einsetzbare Vorlagen und Rahmenwerke zur Beschleunigung der Implementierung in Ihrer Organisation.">Ready-to-use templates and frameworks to accelerate implementation in your organization.</p>
+                            <ul class="text-sm space-y-2">
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                                    <span data-en="Meeting Facilitation Templates" data-de="Vorlagen zur Besprechungsmoderation">Meeting Facilitation Templates</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                                    <span data-en="Performance Review Frameworks" data-de="Leistungsbeurteilungs-Rahmenwerke">Performance Review Frameworks</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                                    <span data-en="Project Planning Tools" data-de="Projektplanungstools">Project Planning Tools</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Case Studies -->
+                        <div class="resource-card">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center mr-4">
+                                    <span class="text-xl">📈</span>
+                                </div>
+                                <h3 class="text-xl font-semibold" data-en="Success Stories" data-de="Erfolgsgeschichten">Success Stories</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4" data-en="Real-world case studies demonstrating successful transformations and their measurable impact." data-de="Reale Fallstudien, die erfolgreiche Transformationen und ihre messbaren Auswirkungen zeigen.">Real-world case studies demonstrating successful transformations and their measurable impact.</p>
+                            <ul class="text-sm space-y-2">
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                                    <span data-en="Tech Startup Transformation" data-de="Tech-Startup-Transformation">Tech Startup Transformation</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                                    <span data-en="Manufacturing Excellence" data-de="Fertigungsexzellenz">Manufacturing Excellence</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                                    <span data-en="Healthcare Innovation" data-de="Gesundheitsinnovation">Healthcare Innovation</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Support -->
+                        <div class="resource-card">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center mr-4">
+                                    <span class="text-xl">🤝</span>
+                                </div>
+                                <h3 class="text-xl font-semibold" data-en="Ongoing Support" data-de="Laufende Unterstützung">Ongoing Support</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4" data-en="Continuous support resources to ensure lasting success and address challenges as they arise." data-de="Kontinuierliche Unterstützungsressourcen, um dauerhaften Erfolg zu gewährleisten und Herausforderungen zu bewältigen.">Continuous support resources to ensure lasting success and address challenges as they arise.</p>
+                            <ul class="text-sm space-y-2">
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                                    <span data-en="Monthly Q&A Sessions" data-de="Monatliche Q&A-Sitzungen">Monthly Q&A Sessions</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                                    <span data-en="Expert Consultation Hours" data-de="Expertenberatungsstunden">Expert Consultation Hours</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                                    <span data-en="Community Forums" data-de="Community-Foren">Community Forums</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Download Section -->
+                    <div class="bg-gradient-to-r from-primary to-accent text-white rounded-lg p-8 text-center">
+                        <h2 class="text-2xl font-bold mb-4" data-en="Get Started with Free Resources" data-de="Beginnen Sie mit kostenlosen Ressourcen">Get Started with Free Resources</h2>
+                        <p class="text-lg opacity-90 mb-6" data-en="Download our complimentary leadership assessment and transformation planning guide" data-de="Laden Sie unsere kostenlose Führungsbewertung und unseren Transformationsplanungsführer herunter">Download our complimentary leadership assessment and transformation planning guide</p>
+                        <div class="space-x-4">
+                            <button class="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300" data-en="Download Assessment" data-de="Bewertung Herunterladen">Download Assessment</button>
+                            <button class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition duration-300" data-en="Planning Guide" data-de="Planungsführer">Planning Guide</button>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Section -->
+                    <div class="mt-16">
+                        <h2 class="text-2xl font-bold text-center mb-8" data-en="Frequently Asked Questions" data-de="Häufig gestellte Fragen">Frequently Asked Questions</h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <h3 class="font-semibold mb-2" data-en="How long do I have access to the resources?" data-de="Wie lange habe ich Zugang zu den Ressourcen?">How long do I have access to the resources?</h3>
+                                <p class="text-gray-600 text-sm" data-en="All clients receive lifetime access to our digital platform and resources, plus 12 months of direct support." data-de="Alle Kunden erhalten lebenslangen Zugang zu unserer digitalen Plattform und Ressourcen sowie 12 Monate direkten Support.">All clients receive lifetime access to our digital platform and resources, plus 12 months of direct support.</p>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <h3 class="font-semibold mb-2" data-en="Can I customize the materials for my organization?" data-de="Kann ich die Materialien für meine Organisation anpassen?">Can I customize the materials for my organization?</h3>
+                                <p class="text-gray-600 text-sm" data-en="Yes, all templates and frameworks can be customized with your branding and specific organizational needs." data-de="Ja, alle Vorlagen und Rahmenwerke können mit Ihrem Branding und spezifischen organisatorischen Bedürfnissen angepasst werden.">Yes, all templates and frameworks can be customized with your branding and specific organizational needs.</p>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <h3 class="font-semibold mb-2" data-en="Are the resources available in multiple languages?" data-de="Sind die Ressourcen in mehreren Sprachen verfügbar?">Are the resources available in multiple languages?</h3>
+                                <p class="text-gray-600 text-sm" data-en="Currently available in English and German, with additional languages being added based on client needs." data-de="Derzeit verfügbar in Englisch und Deutsch, weitere Sprachen werden je nach Kundenbedarf hinzugefügt.">Currently available in English and German, with additional languages being added based on client needs.</p>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <h3 class="font-semibold mb-2" data-en="What if I need additional support during implementation?" data-de="Was ist, wenn ich zusätzliche Unterstützung bei der Implementierung benötige?">What if I need additional support during implementation?</h3>
+                                <p class="text-gray-600 text-sm" data-en="We offer flexible support packages including one-on-one coaching, team workshops, and emergency consultation services." data-de="Wir bieten flexible Support-Pakete einschließlich Einzelcoaching, Team-Workshops und Notfallberatungsdienste.">We offer flexible support packages including one-on-one coaching, team workshops, and emergency consultation services.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact-page" class="page hidden">
+            <div class="py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h1 class="text-4xl font-bold text-center mb-12" data-en="Contact Us" data-de="Kontaktieren Sie uns">Contact Us</h1>
+                    <p class="text-center text-gray-600 mb-16" data-en="Get in touch to start your transformation journey" data-de="Kontaktieren Sie uns, um Ihre Transformationsreise zu beginnen">Get in touch to start your transformation journey</p>
+                    
+                    <div class="grid lg:grid-cols-2 gap-12">
+                        <!-- Contact Form -->
+                        <div class="bg-white rounded-lg shadow-lg p-8">
+                            <h2 class="text-2xl font-bold mb-6" data-en="Send us a Message" data-de="Senden Sie uns eine Nachricht">Send us a Message</h2>
+                            <form id="contact-form" class="space-y-6">
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2" data-en="First Name" data-de="Vorname">First Name</label>
+                                        <input type="text" id="firstName" name="firstName" required class="form-input" data-en placeholder="Your first name" data-de placeholder="Ihr Vorname">
+                                    </div>
+                                    <div>
+                                        <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2" data-en="Last Name" data-de="Nachname">Last Name</label>
+                                        <input type="text" id="lastName" name="lastName" required class="form-input" data-en placeholder="Your last name" data-de placeholder="Ihr Nachname">
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2" data-en="Email Address" data-de="E-Mail-Adresse">Email Address</label>
+                                    <input type="email" id="email" name="email" required class="form-input" data-en placeholder="your.email@company.com" data-de placeholder="ihre.email@firma.com">
+                                </div>
+                                
+                                <div>
+                                    <label for="company" class="block text-sm font-medium text-gray-700 mb-2" data-en="Company" data-de="Unternehmen">Company</label>
+                                    <input type="text" id="company" name="company" class="form-input" data-en placeholder="Your company name" data-de placeholder="Ihr Firmenname">
+                                </div>
+                                
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-2" data-en="Phone Number" data-de="Telefonnummer">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" class="form-input" data-en placeholder="+1 (555) 123-4567" data-de placeholder="+49 30 12345678">
+                                </div>
+                                
+                                <div>
+                                    <label for="interest" class="block text-sm font-medium text-gray-700 mb-2" data-en="Area of Interest" data-de="Interessensbereich">Area of Interest</label>
+                                    <select id="interest" name="interest" class="form-input">
+                                        <option value="" data-en>Select an option</option>
+                                        <option value="leadership" data-en="Leadership Training" data-de="Führungstraining">Leadership Training</option>
+                                        <option value="team" data-en="Team Development" data-de="Teamentwicklung">Team Development</option>
+                                        <option value="communication" data-en="Communication Skills" data-de="Kommunikationsfähigkeiten">Communication Skills</option>
+                                        <option value="change" data-en="Change Management" data-de="Change Management">Change Management</option>
+                                        <option value="custom" data-en="Custom Program" data-de="Maßgeschneidertes Programm">Custom Program</option>
+                                        <option value="consultation" data-en="Free Consultation" data-de="Kostenlose Beratung">Free Consultation</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label for="teamSize" class="block text-sm font-medium text-gray-700 mb-2" data-en="Team Size" data-de="Teamgröße">Team Size</label>
+                                    <select id="teamSize" name="teamSize" class="form-input">
+                                        <option value="" data-en>Select team size</option>
+                                        <option value="1-10" data-en="1-10 people" data-de="1-10 Personen">1-10 people</option>
+                                        <option value="11-50" data-en="11-50 people" data-de="11-50 Personen">11-50 people</option>
+                                        <option value="51-100" data-en="51-100 people" data-de="51-100 Personen">51-100 people</option>
+                                        <option value="100+" data-en="100+ people" data-de="100+ Personen">100+ people</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-2" data-en="Message" data-de="Nachricht">Message</label>
+                                    <textarea id="message" name="message" rows="4" class="form-textarea" data-en placeholder="Tell us about your training needs and goals..." data-de placeholder="Erzählen Sie uns von Ihren Trainingsbedürfnissen und Zielen..."></textarea>
+                                </div>
+                                
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="newsletter" name="newsletter" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                                    <label for="newsletter" class="ml-2 text-sm text-gray-600" data-en="Subscribe to our newsletter for training tips and updates" data-de="Abonnieren Sie unseren Newsletter für Trainingstipps und Updates">Subscribe to our newsletter for training tips and updates</label>
+                                </div>
+                                
+                                <button type="submit" class="w-full btn-primary" data-en="Send Message" data-de="Nachricht Senden">Send Message</button>
+                            </form>
+                        </div>
+                        
+                        <!-- Contact Information & Calendar -->
+                        <div class="space-y-8">
+                            <!-- Contact Information -->
+                            <div class="bg-gray-50 rounded-lg p-8">
+                                <h2 class="text-2xl font-bold mb-6" data-en="Get in Touch" data-de="Kontakt aufnehmen">Get in Touch</h2>
+                                <div class="space-y-4">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center mr-4">
+                                            <span class="text-lg">📧</span>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold" data-en="Email" data-de="E-Mail">Email</p>
+                                            <p class="text-gray-600">info@protrainers-academy.com</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center mr-4">
+                                            <span class="text-lg">📞</span>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold" data-en="Phone" data-de="Telefon">Phone</p>
+                                            <p class="text-gray-600">+49 30 12345678</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center mr-4">
+                                            <span class="text-lg">📍</span>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold" data-en="Address" data-de="Adresse">Address</p>
+                                            <p class="text-gray-600">
+                                                Friedrichstrasse 123<br>
+                                                10117 Berlin, Germany
+                                            </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center mr-4">
+                                            <span class="text-lg">🕒</span>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold" data-en="Business Hours" data-de="Geschäftszeiten">Business Hours</p>
+                                            <p class="text-gray-600 text-sm">
+                                                <span data-en="Mon-Fri: 9:00 AM - 6:00 PM CET" data-de="Mo-Fr: 9:00 - 18:00 MEZ">Mon-Fri: 9:00 AM - 6:00 PM CET</span><br>
+                                                <span data-en="Sat-Sun: Closed" data-de="Sa-So: Geschlossen">Sat-Sun: Closed</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Calendar Booking -->
+                            <div class="bg-white rounded-lg shadow-lg p-8">
+                                <h2 class="text-2xl font-bold mb-4" data-en="Schedule a Free Consultation" data-de="Kostenlose Beratung Terminieren">Schedule a Free Consultation</h2>
+                                <p class="text-gray-600 mb-6" data-en="Book a 30-minute consultation to discuss your training needs" data-de="Buchen Sie ein 30-minütiges Beratungsgespräch, um Ihre Trainingsbedürfnisse zu besprechen">Book a 30-minute consultation to discuss your training needs</p>
+                                
+                                <!-- Calendar Embed Placeholder -->
+                                <div class="calendar-container">
+                                    <div class="text-center py-12 border-2 border-dashed border-gray-300 rounded-lg">
+                                        <span class="text-4xl mb-4 block">📅</span>
+                                        <p class="text-gray-500 mb-4" data-en="Calendar integration will be embedded here" data-de="Kalenderintegration wird hier eingebettet">Calendar integration will be embedded here</p>
+                                        <button class="btn-primary" data-en="Book Consultation" data-de="Beratung Buchen">Book Consultation</button>
+                                        <p class="text-xs text-gray-400 mt-2" data-en="(Calendly or similar booking system)" data-de="(Calendly oder ähnliches Buchungssystem)">(Calendly or similar booking system)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Quick Response -->
+                            <div class="bg-gradient-to-r from-primary to-accent text-white rounded-lg p-6">
+                                <h3 class="text-lg font-semibold mb-2" data-en="Quick Response Guarantee" data-de="Schnelle Antwort Garantiert">Quick Response Guarantee</h3>
+                                <p class="text-sm opacity-90" data-en="We respond to all inquiries within 24 hours during business days" data-de="Wir antworten auf alle Anfragen innerhalb von 24 Stunden an Werktagen">We respond to all inquiries within 24 hours during business days</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Section -->
+                    <div class="mt-16">
+                        <h2 class="text-2xl font-bold text-center mb-8" data-en="Frequently Asked Questions" data-de="Häufig gestellte Fragen">Frequently Asked Questions</h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <h3 class="font-semibold mb-2" data-en="What happens after I submit the form?" data-de="Was passiert, nachdem ich das Formular abgeschickt habe?">What happens after I submit the form?</h3>
+                                <p class="text-gray-600 text-sm" data-en="We'll contact you within 24 hours to schedule a free consultation and discuss your specific training needs." data-de="Wir kontaktieren Sie innerhalb von 24 Stunden, um eine kostenlose Beratung zu vereinbaren und Ihre spezifischen Trainingsbedürfnisse zu besprechen.">We'll contact you within 24 hours to schedule a free consultation and discuss your specific training needs.</p>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <h3 class="font-semibold mb-2" data-en="Is the initial consultation really free?" data-de="Ist die erste Beratung wirklich kostenlos?">Is the initial consultation really free?</h3>
+                                <p class="text-gray-600 text-sm" data-en="Yes, absolutely! We offer a no-obligation 30-minute consultation to understand your needs and explain how we can help." data-de="Ja, absolut! Wir bieten eine unverbindliche 30-minütige Beratung an, um Ihre Bedürfnisse zu verstehen und zu erklären, wie wir helfen können.">Yes, absolutely! We offer a no-obligation 30-minute consultation to understand your needs and explain how we can help.</p>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <h3 class="font-semibold mb-2" data-en="Do you offer virtual training sessions?" data-de="Bieten Sie virtuelle Trainingseinheiten an?">Do you offer virtual training sessions?</h3>
+                                <p class="text-gray-600 text-sm" data-en="Yes, we provide both in-person and virtual training options to accommodate your team's preferences and logistics." data-de="Ja, wir bieten sowohl persönliche als auch virtuelle Trainingsoptionen an, um den Präferenzen und der Logistik Ihres Teams gerecht zu werden.">Yes, we provide both in-person and virtual training options to accommodate your team's preferences and logistics.</p>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <h3 class="font-semibold mb-2" data-en="How long does a typical training program last?" data-de="Wie lange dauert ein typisches Trainingsprogramm?">How long does a typical training program last?</h3>
+                                <p class="text-gray-600 text-sm" data-en="Program length varies from 4-week intensive courses to 6-month comprehensive transformations, depending on your goals and scope." data-de="Die Programmdauer variiert von 4-wöchigen Intensivkursen bis zu 6-monatigen umfassenden Transformationen, je nach Ihren Zielen und dem Umfang.">Program length varies from 4-week intensive courses to 6-month comprehensive transformations, depending on your goals and scope.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">ProTrainers Academy</h3>
+                    <p class="text-gray-400" data-en="Professional business training and development solutions for modern organizations." data-de="Professionelle Geschäftstrainings und Entwicklungslösungen für moderne Organisationen.">Professional business training and development solutions for modern organizations.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-en="Services" data-de="Dienstleistungen">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li data-en="Leadership Training" data-de="Führungstraining">Leadership Training</li>
+                        <li data-en="Team Development" data-de="Teamentwicklung">Team Development</li>
+                        <li data-en="Skills Assessment" data-de="Fähigkeitsbewertung">Skills Assessment</li>
+                        <li data-en="Custom Programs" data-de="Maßgeschneiderte Programme">Custom Programs</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-en="Company" data-de="Unternehmen">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="nav-link hover:text-white" data-page="trainers" data-en="About Us" data-de="Über uns">About Us</a></li>
+                        <li><a href="#" class="nav-link hover:text-white" data-page="method" data-en="Our Approach" data-de="Unser Ansatz">Our Approach</a></li>
+                        <li><a href="#" class="nav-link hover:text-white" data-page="resources" data-en="Resources" data-de="Ressourcen">Resources</a></li>
+                        <li><a href="#" class="nav-link hover:text-white" data-page="contact" data-en="Contact" data-de="Kontakt">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-en="Contact Info" data-de="Kontaktinformationen">Contact Info</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p>Email: info@protrainers-academy.com</p>
+                        <p>Phone: +49 30 12345678</p>
+                        <p data-en="Berlin, Germany" data-de="Berlin, Deutschland">Berlin, Germany</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 ProTrainers Academy. <span data-en="All rights reserved." data-de="Alle Rechte vorbehalten.">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

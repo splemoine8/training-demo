@@ -1,0 +1,86 @@
+{
+  "en": {
+    "nav": {
+      "home": "Home",
+      "trainers": "Trainers",
+      "method": "Our Method",
+      "resources": "Resources",
+      "contact": "Contact"
+    },
+    "hero": {
+      "title": "Transform Your Business Through Expert Training",
+      "subtitle": "We deliver world-class professional development programs that drive real results for your organization",
+      "cta_primary": "Get Started Today",
+      "cta_secondary": "Learn Our Method"
+    },
+    "benefits": {
+      "title": "Why Choose ProTrainers Academy?",
+      "proven_results": {
+        "title": "Proven Results",
+        "description": "Our training programs have helped over 500 companies achieve measurable improvements in performance and productivity."
+      },
+      "expert_trainers": {
+        "title": "Expert Trainers",
+        "description": "Learn from industry veterans with 15+ years of experience in business development and organizational transformation."
+      },
+      "customized_solutions": {
+        "title": "Customized Solutions",
+        "description": "Every training program is tailored to your specific industry, challenges, and organizational goals."
+      }
+    },
+    "testimonials": {
+      "title": "What Our Clients Say",
+      "testimonial_1": "The training transformed our team's productivity by 40%. The practical approach and expert guidance made all the difference.",
+      "testimonial_2": "Outstanding results! Our leadership team gained valuable skills that we use daily. Highly recommend ProTrainers Academy."
+    },
+    "footer": {
+      "description": "Professional business training and development solutions for modern organizations.",
+      "services": "Services",
+      "company": "Company",
+      "contact_info": "Contact Info",
+      "rights": "All rights reserved."
+    }
+  },
+  "de": {
+    "nav": {
+      "home": "Startseite",
+      "trainers": "Trainer",
+      "method": "Unsere Methode",
+      "resources": "Ressourcen",
+      "contact": "Kontakt"
+    },
+    "hero": {
+      "title": "Transformieren Sie Ihr Unternehmen durch Expertentraining",
+      "subtitle": "Wir bieten erstklassige Weiterbildungsprogramme, die echte Ergebnisse für Ihr Unternehmen erzielen",
+      "cta_primary": "Jetzt Anfangen",
+      "cta_secondary": "Unsere Methode Kennenlernen"
+    },
+    "benefits": {
+      "title": "Warum ProTrainers Academy wählen?",
+      "proven_results": {
+        "title": "Bewährte Ergebnisse",
+        "description": "Unsere Trainingsprogramme haben über 500 Unternehmen dabei geholfen, messbare Verbesserungen in Leistung und Produktivität zu erzielen."
+      },
+      "expert_trainers": {
+        "title": "Experten-Trainer",
+        "description": "Lernen Sie von Branchenveteranen mit über 15 Jahren Erfahrung in Geschäftsentwicklung und Organisationstransformation."
+      },
+      "customized_solutions": {
+        "title": "Maßgeschneiderte Lösungen",
+        "description": "Jedes Trainingsprogramm ist auf Ihre spezifische Branche, Herausforderungen und Organisationsziele zugeschnitten."
+      }
+    },
+    "testimonials": {
+      "title": "Was unsere Kunden sagen",
+      "testimonial_1": "Das Training steigerte die Produktivität unseres Teams um 40%. Der praktische Ansatz und die Expertenberatung machten den entscheidenden Unterschied.",
+      "testimonial_2": "Hervorragende Ergebnisse! Unser Führungsteam hat wertvolle Fähigkeiten erworben, die wir täglich nutzen. Sehr empfehlenswert."
+    },
+    "footer": {
+      "description": "Professionelle Geschäftstrainings und Entwicklungslösungen für moderne Organisationen.",
+      "services": "Dienstleistungen",
+      "company": "Unternehmen",
+      "contact_info": "Kontaktinformationen",
+      "rights": "Alle Rechte vorbehalten."
+    }
+  }
+}
