@@ -130,6 +130,30 @@ html {
     @apply text-primary font-semibold;
 }
 
+/* Logo styles */
+.logo-container {
+    transition: opacity 0.3s ease;
+}
+
+.logo-container:hover {
+    opacity: 0.8;
+}
+
+/* Ensure logos maintain aspect ratio and proper sizing */
+nav img {
+    height: 2rem; /* 32px */
+    width: auto;
+    max-width: none;
+    object-fit: contain;
+}
+
+/* Responsive logo adjustments */
+@media (max-width: 768px) {
+    nav img {
+        height: 1.75rem; /* 28px for mobile */
+    }
+}
+
 /* Language-specific content */
 .lang-de {
     display: none;
