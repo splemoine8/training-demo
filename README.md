@@ -4,7 +4,9 @@ A modern, responsive business training website built with vanilla HTML, CSS, and
 
 ## 🚀 Live Demo
 
-**[View Live Website](https://your-username.github.io/protrainers-academy)** *(Update this link after GitHub Pages setup)*
+**[View Live Website](https://splemoine8.github.io/training-demo/)** 
+
+✨ **Fully interactive demo** - Test all features including navigation, language toggle, and contact form!
 
 ## 📋 Project Overview
 
