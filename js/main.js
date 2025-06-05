@@ -13,6 +13,7 @@ class ProTrainersApp {
         this.setupLanguageToggle();
         this.setupMobileMenu();
         this.loadTranslations();
+        this.initCounterAnimation();
     }
 
     setupEventListeners() {
@@ -439,6 +440,57 @@ class ProTrainersApp {
         //         event_label: label
         //     });
         // }
+    }
+
+    initCounterAnimation() {
+        // Set up intersection observer for counter animation
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.dataset.animated) {
+                    this.animateCounters();
+                    entry.target.dataset.animated = 'true';
+                }
+            });
+        }, observerOptions);
+
+        const outcomesSection = document.getElementById('outcomes-section');
+        if (outcomesSection) {
+            observer.observe(outcomesSection);
+        }
+    }
+
+    animateCounters() {
+        const counters = document.querySelectorAll('.counter');
+        
+        counters.forEach(counter => {
+            const target = parseInt(counter.dataset.target);
+            const duration = 2000; // 2 seconds
+            const startTime = performance.now();
+            
+            const updateCounter = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Easing function for smooth animation
+                const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                const currentValue = Math.floor(easeOutQuart * target);
+                
+                counter.textContent = currentValue + '%';
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target + '%';
+                }
+            };
+            
+            requestAnimationFrame(updateCounter);
+        });
     }
 
     getPageTitle(pageId) {

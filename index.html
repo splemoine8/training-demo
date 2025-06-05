@@ -121,21 +121,21 @@
                     <div class="grid md:grid-cols-3 gap-8">
                         <div class="text-center">
                             <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl">🎯</span>
+                                <i class="fas fa-bullseye text-2xl"></i>
                             </div>
                             <h3 class="text-xl font-semibold mb-4" data-en="Proven Results" data-de="Bewährte Ergebnisse">Proven Results</h3>
                             <p class="text-gray-600" data-en="Our training programs have helped over 500 companies achieve measurable improvements in performance and productivity." data-de="Unsere Trainingsprogramme haben über 500 Unternehmen dabei geholfen, messbare Verbesserungen in Leistung und Produktivität zu erzielen.">Our training programs have helped over 500 companies achieve measurable improvements in performance and productivity.</p>
                         </div>
                         <div class="text-center">
                             <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl">👥</span>
+                                <i class="fas fa-users text-2xl"></i>
                             </div>
                             <h3 class="text-xl font-semibold mb-4" data-en="Expert Trainers" data-de="Experten-Trainer">Expert Trainers</h3>
                             <p class="text-gray-600" data-en="Learn from industry veterans with 15+ years of experience in business development and organizational transformation." data-de="Lernen Sie von Branchenveteranen mit über 15 Jahren Erfahrung in Geschäftsentwicklung und Organisationstransformation.">Learn from industry veterans with 15+ years of experience in business development and organizational transformation.</p>
                         </div>
                         <div class="text-center">
                             <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl">🔧</span>
+                                <i class="fas fa-cogs text-2xl"></i>
                             </div>
                             <h3 class="text-xl font-semibold mb-4" data-en="Customized Solutions" data-de="Maßgeschneiderte Lösungen">Customized Solutions</h3>
                             <p class="text-gray-600" data-en="Every training program is tailored to your specific industry, challenges, and organizational goals." data-de="Jedes Trainingsprogramm ist auf Ihre spezifische Branche, Herausforderungen und Organisationsziele zugeschnitten.">Every training program is tailored to your specific industry, challenges, and organizational goals.</p>
@@ -154,7 +154,6 @@
                         <div class="bg-gray-50 p-6 rounded-lg">
                             <p class="text-gray-600 mb-4 italic" data-en="The training transformed our team's productivity by 40%. The practical approach and expert guidance made all the difference." data-de="Das Training steigerte die Produktivität unseres Teams um 40%. Der praktische Ansatz und die Expertenberatung machten den entscheidenden Unterschied.">"The training transformed our team's productivity by 40%. The practical approach and expert guidance made all the difference."</p>
                             <div class="flex items-center">
-                                <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
                                 <div>
                                     <p class="font-semibold">Sarah Johnson</p>
                                     <p class="text-sm text-gray-500">CEO, TechCorp</p>
@@ -164,7 +163,6 @@
                         <div class="bg-gray-50 p-6 rounded-lg">
                             <p class="text-gray-600 mb-4 italic" data-en="Outstanding results! Our leadership team gained valuable skills that we use daily. Highly recommend ProTrainers Academy." data-de="Hervorragende Ergebnisse! Unser Führungsteam hat wertvolle Fähigkeiten erworben, die wir täglich nutzen. Sehr empfehlenswert.">"Outstanding results! Our leadership team gained valuable skills that we use daily. Highly recommend ProTrainers Academy."</p>
                             <div class="flex items-center">
-                                <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
                                 <div>
                                     <p class="font-semibold">Michael Chen</p>
                                     <p class="text-sm text-gray-500">Director, Innovation Ltd</p>
@@ -455,23 +453,23 @@
                     </div>
 
                     <!-- Results Section -->
-                    <div class="bg-gray-50 rounded-lg p-8 mt-16">
+                    <div class="bg-gray-50 rounded-lg p-8 mt-16" id="outcomes-section">
                         <h2 class="text-2xl font-bold text-center mb-8" data-en="Expected Outcomes" data-de="Erwartete Ergebnisse">Expected Outcomes</h2>
                         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                             <div class="text-center">
-                                <div class="text-3xl font-bold text-primary mb-2">40%</div>
+                                <div class="text-3xl font-bold text-primary mb-2 counter" data-target="40" id="counter-1">0%</div>
                                 <p class="text-sm" data-en="Average productivity increase" data-de="Durchschnittliche Produktivitätssteigerung">Average productivity increase</p>
                             </div>
                             <div class="text-center">
-                                <div class="text-3xl font-bold text-primary mb-2">85%</div>
+                                <div class="text-3xl font-bold text-primary mb-2 counter" data-target="85" id="counter-2">0%</div>
                                 <p class="text-sm" data-en="Employee engagement improvement" data-de="Verbesserung des Mitarbeiterengagements">Employee engagement improvement</p>
                             </div>
                             <div class="text-center">
-                                <div class="text-3xl font-bold text-primary mb-2">60%</div>
+                                <div class="text-3xl font-bold text-primary mb-2 counter" data-target="60" id="counter-3">0%</div>
                                 <p class="text-sm" data-en="Faster decision-making" data-de="Schnellere Entscheidungsfindung">Faster decision-making</p>
                             </div>
                             <div class="text-center">
-                                <div class="text-3xl font-bold text-primary mb-2">95%</div>
+                                <div class="text-3xl font-bold text-primary mb-2 counter" data-target="95" id="counter-4">0%</div>
                                 <p class="text-sm" data-en="Client satisfaction rate" data-de="Kundenzufriedenheitsrate">Client satisfaction rate</p>
                             </div>
                         </div>
@@ -492,7 +490,7 @@
                         <div class="resource-card">
                             <div class="flex items-center mb-4">
                                 <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center mr-4">
-                                    <span class="text-xl">📊</span>
+                                    <i class="fas fa-chart-bar text-xl"></i>
                                 </div>
                                 <h3 class="text-xl font-semibold" data-en="Assessment Tools" data-de="Bewertungstools">Assessment Tools</h3>
                             </div>
@@ -517,7 +515,7 @@
                         <div class="resource-card">
                             <div class="flex items-center mb-4">
                                 <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center mr-4">
-                                    <span class="text-xl">📚</span>
+                                    <i class="fas fa-book text-xl"></i>
                                 </div>
                                 <h3 class="text-xl font-semibold" data-en="Learning Workbooks" data-de="Lern-Arbeitsbücher">Learning Workbooks</h3>
                             </div>
@@ -542,7 +540,7 @@
                         <div class="resource-card">
                             <div class="flex items-center mb-4">
                                 <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center mr-4">
-                                    <span class="text-xl">💻</span>
+                                    <i class="fas fa-laptop text-xl"></i>
                                 </div>
                                 <h3 class="text-xl font-semibold" data-en="Digital Platform" data-de="Digitale Plattform">Digital Platform</h3>
                             </div>
@@ -567,7 +565,7 @@
                         <div class="resource-card">
                             <div class="flex items-center mb-4">
                                 <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center mr-4">
-                                    <span class="text-xl">📋</span>
+                                    <i class="fas fa-clipboard-list text-xl"></i>
                                 </div>
                                 <h3 class="text-xl font-semibold" data-en="Templates & Frameworks" data-de="Vorlagen & Rahmenwerke">Templates & Frameworks</h3>
                             </div>
@@ -592,7 +590,7 @@
                         <div class="resource-card">
                             <div class="flex items-center mb-4">
                                 <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center mr-4">
-                                    <span class="text-xl">📈</span>
+                                    <i class="fas fa-chart-line text-xl"></i>
                                 </div>
                                 <h3 class="text-xl font-semibold" data-en="Success Stories" data-de="Erfolgsgeschichten">Success Stories</h3>
                             </div>
@@ -617,7 +615,7 @@
                         <div class="resource-card">
                             <div class="flex items-center mb-4">
                                 <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center mr-4">
-                                    <span class="text-xl">🤝</span>
+                                    <i class="fas fa-handshake text-xl"></i>
                                 </div>
                                 <h3 class="text-xl font-semibold" data-en="Ongoing Support" data-de="Laufende Unterstützung">Ongoing Support</h3>
                             </div>
@@ -758,7 +756,7 @@
                                 <div class="space-y-4">
                                     <div class="flex items-center">
                                         <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center mr-4">
-                                            <span class="text-lg">📧</span>
+                                            <i class="fas fa-envelope text-lg"></i>
                                         </div>
                                         <div>
                                             <p class="font-semibold" data-en="Email" data-de="E-Mail">Email</p>
@@ -768,7 +766,7 @@
                                     
                                     <div class="flex items-center">
                                         <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center mr-4">
-                                            <span class="text-lg">📞</span>
+                                            <i class="fas fa-phone text-lg"></i>
                                         </div>
                                         <div>
                                             <p class="font-semibold" data-en="Phone" data-de="Telefon">Phone</p>
@@ -778,7 +776,7 @@
                                     
                                     <div class="flex items-center">
                                         <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center mr-4">
-                                            <span class="text-lg">📍</span>
+                                            <i class="fas fa-map-marker-alt text-lg"></i>
                                         </div>
                                         <div>
                                             <p class="font-semibold" data-en="Address" data-de="Adresse">Address</p>
@@ -791,7 +789,7 @@
                                     
                                     <div class="flex items-center">
                                         <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center mr-4">
-                                            <span class="text-lg">🕒</span>
+                                            <i class="fas fa-clock text-lg"></i>
                                         </div>
                                         <div>
                                             <p class="font-semibold" data-en="Business Hours" data-de="Geschäftszeiten">Business Hours</p>
@@ -812,7 +810,7 @@
                                 <!-- Calendar Embed Placeholder -->
                                 <div class="calendar-container">
                                     <div class="text-center py-12 border-2 border-dashed border-gray-300 rounded-lg">
-                                        <span class="text-4xl mb-4 block">📅</span>
+                                        <i class="fas fa-calendar-alt text-4xl mb-4 block"></i>
                                         <p class="text-gray-500 mb-4" data-en="Calendar integration will be embedded here" data-de="Kalenderintegration wird hier eingebettet">Calendar integration will be embedded here</p>
                                         <button class="btn-primary" data-en="Book Consultation" data-de="Beratung Buchen">Book Consultation</button>
                                         <p class="text-xs text-gray-400 mt-2" data-en="(Calendly or similar booking system)" data-de="(Calendly oder ähnliches Buchungssystem)">(Calendly or similar booking system)</p>
