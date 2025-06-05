@@ -169,12 +169,11 @@ class ProTrainersApp {
         const mobileClientLoginBtn = document.getElementById('mobile-client-login');
         
         const handleLogin = () => {
-            // Show a fake login modal/alert
             const message = this.currentLang === 'de' 
-                ? 'Kunden-Login wird bald verfügbar sein!\n\nFür sofortigen Zugang kontaktieren Sie uns bitte unter:\ninfo@protrainers-academy.com'
-                : 'Client login coming soon!\n\nFor immediate access, please contact us at:\ninfo@protrainers-academy.com';
+                ? 'Kunden-Login wird bald verfügbar sein! Für sofortigen Zugang kontaktieren Sie uns bitte unter: info@protrainers-academy.com'
+                : 'Client login coming soon! For immediate access, please contact us at: info@protrainers-academy.com';
             
-            alert(message);
+            this.showToast(message, 'info');
         };
         
         if (clientLoginBtn) {
@@ -363,6 +362,20 @@ class ProTrainersApp {
         if (element) {
             element.innerHTML = `<div class="alert alert-error">${message}</div>`;
         }
+    }
+
+    showToast(message, type = 'info') {
+        Toastify({
+            text: message,
+            duration: 5000,
+            gravity: "top",
+            position: "right",
+            className: `toast-${type}`,
+            stopOnFocus: true,
+            offset: {
+                y: 80  // Push down below sticky nav
+            }
+        }).showToast();
     }
 
     // Form handling
@@ -718,11 +731,11 @@ class ProTrainersApp {
     handleBookingSubmit() {
         // Get form data
         const formData = {
-            firstName: document.getElementById('first-name').value,
-            lastName: document.getElementById('last-name').value,
-            email: document.getElementById('email').value,
-            company: document.getElementById('company').value,
-            message: document.getElementById('message').value,
+            firstName: document.getElementById('booking-first-name').value,
+            lastName: document.getElementById('booking-last-name').value,
+            email: document.getElementById('booking-email').value,
+            company: document.getElementById('booking-company').value,
+            message: document.getElementById('booking-message').value,
             date: this.calendarState.selectedDate,
             time: this.calendarState.selectedTime
         };

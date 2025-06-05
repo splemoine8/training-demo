@@ -960,6 +960,47 @@ section + section {
     outline-offset: 2px;
 }
 
+/* Toastify Custom Styles */
+.toastify {
+    position: fixed !important;
+    top: 5rem !important;  /* Clear the sticky nav */
+    right: 1rem !important;
+    max-width: 18rem !important;
+    z-index: 1050 !important;
+    padding: 0.75rem 1rem !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
+    animation: fadeSlide 0.3s ease !important;
+    cursor: pointer !important;
+    font-family: inherit !important;
+}
+
+.toast-info {
+    background: #2563eb !important;
+    color: #fff !important;
+}
+
+.toast-success {
+    background: #16a34a !important;
+    color: #fff !important;
+}
+
+.toast-error {
+    background: #dc2626 !important;
+    color: #fff !important;
+}
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Dark mode support (future enhancement) */
 @media (prefers-color-scheme: dark) {
     /* Dark mode styles can be added here */

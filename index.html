@@ -817,28 +817,28 @@
                                                 <form id="booking-form" class="space-y-4">
                                                     <div class="grid gap-4 sm:grid-cols-2">
                                                         <div>
-                                                            <label class="mb-1 block text-sm font-medium" data-en="First Name*" data-de="Vorname*">First Name*</label>
-                                                            <input type="text" id="first-name" class="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:ring-2 focus:ring-primary/20" required />
+                                                            <label for="booking-first-name" class="mb-1 block text-sm font-medium" data-en="First Name*" data-de="Vorname*">First Name*</label>
+                                                            <input type="text" id="booking-first-name" class="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:ring-2 focus:ring-primary/20" required />
                                                         </div>
                                                         <div>
-                                                            <label class="mb-1 block text-sm font-medium" data-en="Last Name*" data-de="Nachname*">Last Name*</label>
-                                                            <input type="text" id="last-name" class="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:ring-2 focus:ring-primary/20" required />
+                                                            <label for="booking-last-name" class="mb-1 block text-sm font-medium" data-en="Last Name*" data-de="Nachname*">Last Name*</label>
+                                                            <input type="text" id="booking-last-name" class="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:ring-2 focus:ring-primary/20" required />
                                                         </div>
                                                     </div>
 
                                                     <div>
-                                                        <label class="mb-1 block text-sm font-medium" data-en="Email*" data-de="E-Mail*">Email*</label>
-                                                        <input type="email" id="email" class="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:ring-2 focus:ring-primary/20" required />
+                                                        <label for="booking-email" class="mb-1 block text-sm font-medium" data-en="Email*" data-de="E-Mail*">Email*</label>
+                                                        <input type="email" id="booking-email" class="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:ring-2 focus:ring-primary/20" required />
                                                     </div>
 
                                                     <div>
-                                                        <label class="mb-1 block text-sm font-medium" data-en="Company" data-de="Unternehmen">Company</label>
-                                                        <input type="text" id="company" class="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:ring-2 focus:ring-primary/20" />
+                                                        <label for="booking-company" class="mb-1 block text-sm font-medium" data-en="Company" data-de="Unternehmen">Company</label>
+                                                        <input type="text" id="booking-company" class="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:ring-2 focus:ring-primary/20" />
                                                     </div>
 
                                                     <div>
-                                                        <label class="mb-1 block text-sm font-medium" data-en="What would you like to discuss?" data-de="Was möchten Sie besprechen?">What would you like to discuss?</label>
-                                                        <textarea id="message" rows="3" class="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Tell us about your training goals and challenges..."></textarea>
+                                                        <label for="booking-message" class="mb-1 block text-sm font-medium" data-en="What would you like to discuss?" data-de="Was möchten Sie besprechen?">What would you like to discuss?</label>
+                                                        <textarea id="booking-message" rows="3" class="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Tell us about your training goals and challenges..."></textarea>
                                                     </div>
 
                                                     <button type="submit" id="schedule-btn" class="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-4 rounded-md transition-colors focus:ring-2 focus:ring-primary/20" data-en="Schedule Consultation" data-de="Beratung Terminieren">
@@ -877,33 +877,33 @@
                             <form id="contact-form" class="space-y-6">
                                 <div class="grid md:grid-cols-2 gap-4">
                                     <div>
-                                        <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2" data-en="First Name" data-de="Vorname">First Name</label>
-                                        <input type="text" id="firstName" name="firstName" required class="form-input" data-en placeholder="Your first name" data-de placeholder="Ihr Vorname">
+                                        <label for="contact-firstName" class="block text-sm font-medium text-gray-700 mb-2" data-en="First Name" data-de="Vorname">First Name</label>
+                                        <input type="text" id="contact-firstName" name="firstName" required class="form-input" data-en placeholder="Your first name" data-de placeholder="Ihr Vorname">
                                     </div>
                                     <div>
-                                        <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2" data-en="Last Name" data-de="Nachname">Last Name</label>
-                                        <input type="text" id="lastName" name="lastName" required class="form-input" data-en placeholder="Your last name" data-de placeholder="Ihr Nachname">
+                                        <label for="contact-lastName" class="block text-sm font-medium text-gray-700 mb-2" data-en="Last Name" data-de="Nachname">Last Name</label>
+                                        <input type="text" id="contact-lastName" name="lastName" required class="form-input" data-en placeholder="Your last name" data-de placeholder="Ihr Nachname">
                                     </div>
                                 </div>
                                 
                                 <div>
-                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2" data-en="Email Address" data-de="E-Mail-Adresse">Email Address</label>
-                                    <input type="email" id="email" name="email" required class="form-input" data-en placeholder="your.email@company.com" data-de placeholder="ihre.email@firma.com">
+                                    <label for="contact-email" class="block text-sm font-medium text-gray-700 mb-2" data-en="Email Address" data-de="E-Mail-Adresse">Email Address</label>
+                                    <input type="email" id="contact-email" name="email" required class="form-input" data-en placeholder="your.email@company.com" data-de placeholder="ihre.email@firma.com">
                                 </div>
                                 
                                 <div>
-                                    <label for="company" class="block text-sm font-medium text-gray-700 mb-2" data-en="Company" data-de="Unternehmen">Company</label>
-                                    <input type="text" id="company" name="company" class="form-input" data-en placeholder="Your company name" data-de placeholder="Ihr Firmenname">
+                                    <label for="contact-company" class="block text-sm font-medium text-gray-700 mb-2" data-en="Company" data-de="Unternehmen">Company</label>
+                                    <input type="text" id="contact-company" name="company" class="form-input" data-en placeholder="Your company name" data-de placeholder="Ihr Firmenname">
                                 </div>
                                 
                                 <div>
-                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-2" data-en="Phone Number" data-de="Telefonnummer">Phone Number</label>
-                                    <input type="tel" id="phone" name="phone" class="form-input" data-en placeholder="+1 (555) 123-4567" data-de placeholder="+49 30 12345678">
+                                    <label for="contact-phone" class="block text-sm font-medium text-gray-700 mb-2" data-en="Phone Number" data-de="Telefonnummer">Phone Number</label>
+                                    <input type="tel" id="contact-phone" name="phone" class="form-input" data-en placeholder="+1 (555) 123-4567" data-de placeholder="+49 30 12345678">
                                 </div>
                                 
                                 <div>
-                                    <label for="interest" class="block text-sm font-medium text-gray-700 mb-2" data-en="Area of Interest" data-de="Interessensbereich">Area of Interest</label>
-                                    <select id="interest" name="interest" class="form-input">
+                                    <label for="contact-interest" class="block text-sm font-medium text-gray-700 mb-2" data-en="Area of Interest" data-de="Interessensbereich">Area of Interest</label>
+                                    <select id="contact-interest" name="interest" class="form-input">
                                         <option value="" data-en>Select an option</option>
                                         <option value="leadership" data-en="Leadership Training" data-de="Führungstraining">Leadership Training</option>
                                         <option value="team" data-en="Team Development" data-de="Teamentwicklung">Team Development</option>
@@ -915,8 +915,8 @@
                                 </div>
                                 
                                 <div>
-                                    <label for="teamSize" class="block text-sm font-medium text-gray-700 mb-2" data-en="Team Size" data-de="Teamgröße">Team Size</label>
-                                    <select id="teamSize" name="teamSize" class="form-input">
+                                    <label for="contact-teamSize" class="block text-sm font-medium text-gray-700 mb-2" data-en="Team Size" data-de="Teamgröße">Team Size</label>
+                                    <select id="contact-teamSize" name="teamSize" class="form-input">
                                         <option value="" data-en>Select team size</option>
                                         <option value="1-10" data-en="1-10 people" data-de="1-10 Personen">1-10 people</option>
                                         <option value="11-50" data-en="11-50 people" data-de="11-50 Personen">11-50 people</option>
@@ -926,13 +926,13 @@
                                 </div>
                                 
                                 <div>
-                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-2" data-en="Message" data-de="Nachricht">Message</label>
-                                    <textarea id="message" name="message" rows="4" class="form-textarea" data-en placeholder="Tell us about your training needs and goals..." data-de placeholder="Erzählen Sie uns von Ihren Trainingsbedürfnissen und Zielen..."></textarea>
+                                    <label for="contact-message" class="block text-sm font-medium text-gray-700 mb-2" data-en="Message" data-de="Nachricht">Message</label>
+                                    <textarea id="contact-message" name="message" rows="4" class="form-textarea" data-en placeholder="Tell us about your training needs and goals..." data-de placeholder="Erzählen Sie uns von Ihren Trainingsbedürfnissen und Zielen..."></textarea>
                                 </div>
                                 
                                 <div class="flex items-center">
-                                    <input type="checkbox" id="newsletter" name="newsletter" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
-                                    <label for="newsletter" class="ml-2 text-sm text-gray-600" data-en="Subscribe to our newsletter for training tips and updates" data-de="Abonnieren Sie unseren Newsletter für Trainingstipps und Updates">Subscribe to our newsletter for training tips and updates</label>
+                                    <input type="checkbox" id="contact-newsletter" name="newsletter" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                                    <label for="contact-newsletter" class="ml-2 text-sm text-gray-600" data-en="Subscribe to our newsletter for training tips and updates" data-de="Abonnieren Sie unseren Newsletter für Trainingstipps und Updates">Subscribe to our newsletter for training tips and updates</label>
                                 </div>
                                 
                                 <button type="submit" class="w-full btn-primary" data-en="Send Message" data-de="Nachricht Senden">Send Message</button>
@@ -1069,6 +1069,10 @@
         </div>
     </footer>
 
+    <!-- Toastify JS -->
+    <link rel="stylesheet" href="https://unpkg.com/toastify-js/src/toastify.min.css">
+    <script src="https://unpkg.com/toastify-js"></script>
+    
     <script src="js/main.js"></script>
 </body>
 </html>
