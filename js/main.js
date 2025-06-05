@@ -12,6 +12,7 @@ class ProTrainersApp {
         this.setupNavigation();
         this.setupLanguageToggle();
         this.setupMobileMenu();
+        this.setupClientLogin();
         this.loadTranslations();
         this.initCounterAnimation();
     }
@@ -99,10 +100,18 @@ class ProTrainersApp {
 
     setupLanguageToggle() {
         const langToggle = document.getElementById('lang-toggle');
+        const mobileLangToggle = document.getElementById('mobile-lang-toggle');
+        
+        const handleLanguageToggle = () => {
+            this.toggleLanguage();
+        };
+        
         if (langToggle) {
-            langToggle.addEventListener('click', () => {
-                this.toggleLanguage();
-            });
+            langToggle.addEventListener('click', handleLanguageToggle);
+        }
+        
+        if (mobileLangToggle) {
+            mobileLangToggle.addEventListener('click', handleLanguageToggle);
         }
     }
 
@@ -152,6 +161,28 @@ class ProTrainersApp {
         const mobileMenu = document.getElementById('mobile-menu');
         if (mobileMenu) {
             mobileMenu.classList.add('hidden');
+        }
+    }
+
+    setupClientLogin() {
+        const clientLoginBtn = document.getElementById('client-login');
+        const mobileClientLoginBtn = document.getElementById('mobile-client-login');
+        
+        const handleLogin = () => {
+            // Show a fake login modal/alert
+            const message = this.currentLang === 'de' 
+                ? 'Kunden-Login wird bald verfügbar sein!\n\nFür sofortigen Zugang kontaktieren Sie uns bitte unter:\ninfo@protrainers-academy.com'
+                : 'Client login coming soon!\n\nFor immediate access, please contact us at:\ninfo@protrainers-academy.com';
+            
+            alert(message);
+        };
+        
+        if (clientLoginBtn) {
+            clientLoginBtn.addEventListener('click', handleLogin);
+        }
+        
+        if (mobileClientLoginBtn) {
+            mobileClientLoginBtn.addEventListener('click', handleLogin);
         }
     }
 

@@ -28,12 +28,10 @@
     <nav class="bg-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
+                <div class="flex items-center md:flex-none flex-1 md:flex-initial justify-center md:justify-start">
                     <a href="#" class="flex items-center logo-container" data-page="home">
-                        <!-- Full logo for desktop -->
-                        <img src="images/academy_logo_full_new.png" alt="ProTrainers Academy" class="hidden md:block h-14 lg:h-20 w-auto">
-                        <!-- Icon logo for mobile -->
-                        <img src="images/academy_logo_only.png" alt="ProTrainers Academy" class="md:hidden h-10 w-auto">
+                        <!-- Full logo for all screen sizes -->
+                        <img src="images/academy_logo_full_new.png" alt="ProTrainers Academy" class="h-16 md:h-14 lg:h-20 w-auto">
                     </a>
                 </div>
                 <div class="hidden md:block">
@@ -45,10 +43,14 @@
                         <a href="#" class="nav-link text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium" data-page="contact" data-en="Contact" data-de="Kontakt">Contact</a>
                     </div>
                 </div>
-                <div class="flex items-center space-x-4">
+                <div class="hidden md:flex items-center space-x-4">
                     <button id="lang-toggle" class="bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded text-sm font-medium">
                         <span class="lang-en">🇩🇪 DE</span>
                         <span class="lang-de hidden">🇺🇸 EN</span>
+                    </button>
+                    <button id="client-login" class="bg-primary text-white hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-medium transition duration-300 flex items-center space-x-2">
+                        <i class="fas fa-user"></i>
+                        <span data-en="Client Login" data-de="Kunden Login">Client Login</span>
                     </button>
                 </div>
                 <!-- Mobile menu button -->
@@ -69,6 +71,16 @@
                 <a href="#" class="nav-link block text-secondary hover:text-primary px-3 py-2 rounded-md text-base font-medium" data-page="method" data-en="Our Method" data-de="Unsere Methode">Our Method</a>
                 <a href="#" class="nav-link block text-secondary hover:text-primary px-3 py-2 rounded-md text-base font-medium" data-page="resources" data-en="Resources" data-de="Ressourcen">Resources</a>
                 <a href="#" class="nav-link block text-secondary hover:text-primary px-3 py-2 rounded-md text-base font-medium" data-page="contact" data-en="Contact" data-de="Kontakt">Contact</a>
+                <div class="border-t border-gray-200 pt-3 mt-3 space-y-3">
+                    <button id="mobile-lang-toggle" class="w-full bg-gray-200 hover:bg-gray-300 px-3 py-2 rounded text-sm font-medium">
+                        <span class="lang-en">🇩🇪 DE</span>
+                        <span class="lang-de hidden">🇺🇸 EN</span>
+                    </button>
+                    <button id="mobile-client-login" class="w-full bg-primary text-white hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-medium transition duration-300 flex items-center justify-center space-x-2">
+                        <i class="fas fa-user"></i>
+                        <span data-en="Client Login" data-de="Kunden Login">Client Login</span>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
