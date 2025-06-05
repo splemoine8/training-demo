@@ -679,6 +679,287 @@ section + section {
     pointer-events: none;
 }
 
+/* Calendar Widget Styles */
+#calendar-booking-widget {
+    min-height: 500px;
+    max-width: 100%;
+}
+
+#calendar-booking-widget .grid.md\\:grid-cols-2 {
+    min-height: 500px;
+}
+
+#calendar-booking-widget .relative.p-6 {
+    min-width: 350px;
+}
+
+.booking-step {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Calendar day hover effects */
+.calendar-day-available {
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.calendar-day-available:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2);
+}
+
+.calendar-day-available:hover::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: linear-gradient(45deg, #1e40af, #0ea5e9);
+    z-index: -1;
+    opacity: 0.1;
+}
+
+/* Time slot animations */
+.time-slot {
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.time-slot:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(30, 64, 175, 0.15);
+}
+
+.time-slot::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.time-slot:hover::before {
+    left: 100%;
+}
+
+/* Form focus states */
+.calendar-form-input:focus {
+    border-color: #1e40af;
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+    outline: none;
+}
+
+/* Success animation */
+.success-check {
+    animation: checkmark 0.6s ease-in-out;
+}
+
+@keyframes checkmark {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Loading spinner */
+.booking-spinner {
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #1e40af;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Navigation button hover effects */
+.nav-btn {
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    background-color: rgba(107, 114, 128, 0.1);
+    transform: scale(1.05);
+}
+
+/* Step indicator (if needed) */
+.step-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.step-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #d1d5db;
+    margin: 0 4px;
+    transition: all 0.3s ease;
+}
+
+.step-dot.active {
+    background-color: #1e40af;
+    transform: scale(1.2);
+}
+
+.step-dot.completed {
+    background-color: #10b981;
+}
+
+/* Mobile responsiveness for calendar */
+@media (max-width: 768px) {
+    /* Remove outer container padding on mobile */
+    .max-w-7xl.mx-auto.px-4.sm\\:px-6.lg\\:px-8 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    /* Remove calendar container padding */
+    .bg-white.rounded-lg.shadow-lg.p-8 {
+        padding: 0.5rem !important;
+        margin: 0;
+    }
+    
+    /* Hide the left sidebar on mobile */
+    #calendar-booking-widget .grid.md\\:grid-cols-2 > div:first-child {
+        display: none;
+    }
+    
+    /* Make the calendar full width on mobile */
+    #calendar-booking-widget .grid.md\\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Adjust calendar container for mobile */
+    #calendar-booking-widget {
+        min-height: auto;
+        margin: 0;
+    }
+    
+    /* Show mobile header */
+    .mobile-header {
+        display: block !important;
+        margin: -0.5rem -0.5rem 0 -0.5rem;
+    }
+    
+    /* Remove padding from calendar widget border */
+    #calendar-booking-widget .overflow-hidden.rounded-lg {
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+    }
+    
+    /* Time slots responsive grid */
+    #time-slots {
+        grid-template-columns: 1fr 1fr !important;
+    }
+    
+    /* Form responsive layout */
+    #booking-form .grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Remove padding from calendar content area on mobile */
+    #calendar-booking-widget .relative.p-6 {
+        padding: 0;
+        min-width: auto;
+    }
+    
+    /* Add minimal padding only where needed */
+    #calendar-booking-widget h2,
+    #calendar-booking-widget h3,
+    #calendar-booking-widget .mb-4,
+    #calendar-booking-widget .mb-6,
+    #calendar-booking-widget .mt-8,
+    #calendar-booking-widget form {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    /* Calendar grid and time slots can extend full width */
+    #calendar-days,
+    #time-slots {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    /* Mobile-specific calendar days sizing */
+    #calendar-days button {
+        height: 2.75rem;
+        width: 2.75rem;
+        font-size: 0.875rem;
+        touch-action: manipulation;
+    }
+    
+    /* Mobile time slots - larger touch targets */
+    #time-slots button {
+        padding: 0.875rem !important;
+        font-size: 0.875rem;
+        min-height: 3rem;
+        touch-action: manipulation;
+    }
+    
+    /* Mobile form inputs - larger touch targets */
+    #booking-form input,
+    #booking-form textarea,
+    #booking-form select {
+        min-height: 3rem;
+        font-size: 1rem;
+    }
+    
+    /* Mobile navigation buttons */
+    #prev-month,
+    #next-month,
+    #back-to-date,
+    #back-to-time {
+        min-height: 2.75rem;
+        min-width: 2.75rem;
+        touch-action: manipulation;
+    }
+    
+    /* Hide desktop-only header text on mobile */
+    .bg-white.rounded-lg.shadow-lg.p-8 > h2,
+    .bg-white.rounded-lg.shadow-lg.p-8 > p {
+        display: none;
+    }
+}
+
+/* Focus trap for accessibility */
+.calendar-booking-widget:focus-within {
+    outline: 2px solid #1e40af;
+    outline-offset: 2px;
+}
+
 /* Dark mode support (future enhancement) */
 @media (prefers-color-scheme: dark) {
     /* Dark mode styles can be added here */

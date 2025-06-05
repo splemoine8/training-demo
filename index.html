@@ -691,6 +691,185 @@
                     <h1 class="text-4xl font-bold text-center mb-12" data-en="Contact Us" data-de="Kontaktieren Sie uns">Contact Us</h1>
                     <p class="text-center text-gray-600 mb-16" data-en="Get in touch to start your transformation journey" data-de="Kontaktieren Sie uns, um Ihre Transformationsreise zu beginnen">Get in touch to start your transformation journey</p>
                     
+                    <!-- Calendar Booking Widget - Full Width -->
+                    <div class="mb-16">
+                        <div class="bg-white rounded-lg shadow-lg p-8">
+                            <h2 class="text-2xl font-bold mb-4 text-center" data-en="Schedule a Free Consultation" data-de="Kostenlose Beratung Terminieren">Schedule a Free Consultation</h2>
+                            <p class="text-gray-600 mb-6 text-center" data-en="Book a 30-minute consultation to discuss your training needs" data-de="Buchen Sie ein 30-minütiges Beratungsgespräch, um Ihre Trainingsbedürfnisse zu besprechen">Book a 30-minute consultation to discuss your training needs</p>
+                            
+                            <!-- Calendar Booking Component -->
+                            <div id="calendar-booking-widget" class="calendar-container">
+                                <!-- Mobile-only header -->
+                                <div class="mobile-header hidden md:hidden bg-gradient-to-r from-primary to-accent text-white p-4 rounded-t-lg text-center">
+                                    <h3 class="text-lg font-bold mb-1" data-en="Book Your Free Consultation" data-de="Kostenlose Beratung Buchen">Book Your Free Consultation</h3>
+                                    <p class="text-sm opacity-90" data-en="Select your preferred date and time below" data-de="Wählen Sie unten Ihr bevorzugtes Datum und Ihre Uhrzeit">Select your preferred date and time below</p>
+                                </div>
+                                <div class="overflow-hidden rounded-lg md:rounded-lg rounded-t-none md:rounded-t-lg border border-gray-200 bg-white shadow-lg">
+                                    <div class="grid md:grid-cols-2">
+                                        <!-- Left sidebar -->
+                                        <div class="flex flex-col border-b border-gray-200 md:border-b-0 md:border-r">
+                                            <!-- Top section with logo -->
+                                            <div class="flex items-center justify-center bg-gray-50 p-8">
+                                                <div class="relative">
+                                                    <img src="images/academy_logo_only.png" alt="ProTrainers Academy" class="h-20 w-20 rounded-2xl shadow-lg">
+                                                </div>
+                                            </div>
+
+                                            <!-- Divider -->
+                                            <div class="border-t border-gray-200"></div>
+
+                                            <!-- Bottom section with event details -->
+                                            <div class="flex flex-1 flex-col bg-white p-6">
+                                                <div class="mb-6 flex items-start">
+                                                    <!-- Small logo -->
+                                                    <div class="mr-4 mt-1 flex-shrink-0">
+                                                        <img src="images/academy_logo_only.png" alt="ProTrainers Academy" class="h-8 w-8 rounded shadow">
+                                                    </div>
+                                                    <div class="flex-1">
+                                                        <div class="text-sm text-gray-500" data-en="ProTrainers Academy" data-de="ProTrainers Academy">ProTrainers Academy</div>
+                                                        <h2 class="text-2xl font-bold text-gray-800" data-en="Free Strategy Consultation" data-de="Kostenlose Strategieberatung">Free Strategy Consultation</h2>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-6 flex items-center">
+                                                    <i class="fas fa-clock mr-2 h-5 w-5 text-gray-500"></i>
+                                                    <span class="text-gray-700" data-en="30 min" data-de="30 Min">30 min</span>
+                                                </div>
+
+                                                <p class="mb-8 flex-1 text-gray-700" data-en="Discover how our proven TRANSFORM methodology can revolutionize your organization. During this complimentary session, we'll analyze your current challenges and outline a customized training strategy." data-de="Entdecken Sie, wie unsere bewährte TRANSFORM-Methodik Ihr Unternehmen revolutionieren kann. In dieser kostenlosen Sitzung analysieren wir Ihre aktuellen Herausforderungen und skizzieren eine maßgeschneiderte Trainingsstrategie.">
+                                                    Discover how our proven TRANSFORM methodology can revolutionize your organization. During this complimentary session, we'll analyze your current challenges and outline a customized training strategy.
+                                                </p>
+
+                                                <div class="mt-auto">
+                                                    <button class="text-primary hover:underline text-sm" data-en="Privacy Policy" data-de="Datenschutzrichtlinie">Privacy Policy</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Right content area -->
+                                        <div class="relative p-6">
+                                            <h2 class="mb-6 text-2xl font-bold text-gray-800" data-en="Select a Date & Time" data-de="Datum & Zeit wählen">Select a Date & Time</h2>
+
+                                            <!-- Date Selection Step -->
+                                            <div id="date-step" class="booking-step">
+                                                <div class="mb-4 flex items-center justify-between">
+                                                    <button id="prev-month" class="rounded-full p-2 hover:bg-gray-100 transition-colors">
+                                                        <i class="fas fa-chevron-left h-5 w-5"></i>
+                                                    </button>
+                                                    <h3 id="current-month" class="text-lg font-medium">June 2025</h3>
+                                                    <button id="next-month" class="rounded-full p-2 hover:bg-gray-100 transition-colors">
+                                                        <i class="fas fa-chevron-right h-5 w-5"></i>
+                                                    </button>
+                                                </div>
+
+                                                <div class="mb-6">
+                                                    <div class="grid grid-cols-7 gap-1 text-center mb-2">
+                                                        <div class="py-2 text-sm font-medium text-gray-700" data-en="SUN" data-de="SO">SUN</div>
+                                                        <div class="py-2 text-sm font-medium text-gray-700" data-en="MON" data-de="MO">MON</div>
+                                                        <div class="py-2 text-sm font-medium text-gray-700" data-en="TUE" data-de="DI">TUE</div>
+                                                        <div class="py-2 text-sm font-medium text-gray-700" data-en="WED" data-de="MI">WED</div>
+                                                        <div class="py-2 text-sm font-medium text-gray-700" data-en="THU" data-de="DO">THU</div>
+                                                        <div class="py-2 text-sm font-medium text-gray-700" data-en="FRI" data-de="FR">FRI</div>
+                                                        <div class="py-2 text-sm font-medium text-gray-700" data-en="SAT" data-de="SA">SAT</div>
+                                                    </div>
+
+                                                    <!-- Calendar days will be populated by JavaScript -->
+                                                    <div id="calendar-days" class="grid grid-cols-7 gap-1"></div>
+                                                </div>
+
+                                                <div class="mt-8">
+                                                    <div class="mb-2 text-gray-700" data-en="Time zone" data-de="Zeitzone">Time zone</div>
+                                                    <select id="timezone-select" class="w-full rounded-md border border-gray-300 p-2 bg-white focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                                        <option value="europe/berlin" data-en="🇩🇪 Central European Time (Berlin)" data-de="🇩🇪 Mitteleuropäische Zeit (Berlin)">🇩🇪 Central European Time (Berlin)</option>
+                                                        <option value="america/new_york" data-en="🇺🇸 Eastern Time (New York)" data-de="🇺🇸 Ostküsten Zeit (New York)">🇺🇸 Eastern Time (New York)</option>
+                                                        <option value="america/chicago" data-en="🇺🇸 Central Time (Chicago)" data-de="🇺🇸 Zentrale Zeit (Chicago)">🇺🇸 Central Time (Chicago)</option>
+                                                        <option value="america/los_angeles" data-en="🇺🇸 Pacific Time (Los Angeles)" data-de="🇺🇸 Pazifische Zeit (Los Angeles)">🇺🇸 Pacific Time (Los Angeles)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <!-- Time Selection Step -->
+                                            <div id="time-step" class="booking-step hidden">
+                                                <button id="back-to-date" class="mb-4 flex items-center text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                                                    <i class="fas fa-chevron-left mr-1 h-4 w-4"></i>
+                                                    <span data-en="Back" data-de="Zurück">Back</span>
+                                                </button>
+
+                                                <h3 id="selected-date-display" class="mb-4 text-lg font-medium">June 16, 2025</h3>
+
+                                                <div id="time-slots" class="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                                                    <!-- Time slots will be populated by JavaScript -->
+                                                </div>
+                                            </div>
+
+                                            <!-- Details Step -->
+                                            <div id="details-step" class="booking-step hidden">
+                                                <button id="back-to-time" class="mb-4 flex items-center text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                                                    <i class="fas fa-chevron-left mr-1 h-4 w-4"></i>
+                                                    <span data-en="Back" data-de="Zurück">Back</span>
+                                                </button>
+
+                                                <div class="mb-6 rounded-lg border border-gray-200 p-4 bg-gray-50">
+                                                    <h3 id="booking-summary-date" class="mb-1 font-medium">June 16, 2025</h3>
+                                                    <p id="booking-summary-time" class="text-gray-600">10:00 AM - Central European Time</p>
+                                                </div>
+
+                                                <form id="booking-form" class="space-y-4">
+                                                    <div class="grid gap-4 sm:grid-cols-2">
+                                                        <div>
+                                                            <label class="mb-1 block text-sm font-medium" data-en="First Name*" data-de="Vorname*">First Name*</label>
+                                                            <input type="text" id="first-name" class="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:ring-2 focus:ring-primary/20" required />
+                                                        </div>
+                                                        <div>
+                                                            <label class="mb-1 block text-sm font-medium" data-en="Last Name*" data-de="Nachname*">Last Name*</label>
+                                                            <input type="text" id="last-name" class="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:ring-2 focus:ring-primary/20" required />
+                                                        </div>
+                                                    </div>
+
+                                                    <div>
+                                                        <label class="mb-1 block text-sm font-medium" data-en="Email*" data-de="E-Mail*">Email*</label>
+                                                        <input type="email" id="email" class="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:ring-2 focus:ring-primary/20" required />
+                                                    </div>
+
+                                                    <div>
+                                                        <label class="mb-1 block text-sm font-medium" data-en="Company" data-de="Unternehmen">Company</label>
+                                                        <input type="text" id="company" class="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:ring-2 focus:ring-primary/20" />
+                                                    </div>
+
+                                                    <div>
+                                                        <label class="mb-1 block text-sm font-medium" data-en="What would you like to discuss?" data-de="Was möchten Sie besprechen?">What would you like to discuss?</label>
+                                                        <textarea id="message" rows="3" class="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Tell us about your training goals and challenges..."></textarea>
+                                                    </div>
+
+                                                    <button type="submit" id="schedule-btn" class="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-4 rounded-md transition-colors focus:ring-2 focus:ring-primary/20" data-en="Schedule Consultation" data-de="Beratung Terminieren">
+                                                        Schedule Consultation
+                                                    </button>
+                                                </form>
+                                            </div>
+
+                                            <!-- Success Step -->
+                                            <div id="success-step" class="booking-step hidden text-center">
+                                                <div class="mb-6">
+                                                    <i class="fas fa-check-circle text-6xl text-green-500 mb-4"></i>
+                                                    <h3 class="text-2xl font-bold text-gray-800 mb-2" data-en="Consultation Scheduled!" data-de="Beratung Terminiert!">Consultation Scheduled!</h3>
+                                                    <p class="text-gray-600" data-en="We've sent confirmation details to your email." data-de="Wir haben Bestätigungsdetails an Ihre E-Mail gesendet.">We've sent confirmation details to your email.</p>
+                                                </div>
+                                                
+                                                <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                                                    <div id="final-booking-summary" class="text-left">
+                                                        <!-- Summary will be populated by JavaScript -->
+                                                    </div>
+                                                </div>
+
+                                                <button id="book-another" class="btn-secondary" data-en="Schedule Another" data-de="Weiteren Termin Buchen">Schedule Another</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="grid lg:grid-cols-2 gap-12">
                         <!-- Contact Form -->
                         <div class="bg-white rounded-lg shadow-lg p-8">
@@ -810,22 +989,6 @@
                                                 <span data-en="Sat-Sun: Closed" data-de="Sa-So: Geschlossen">Sat-Sun: Closed</span>
                                             </p>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Calendar Booking -->
-                            <div class="bg-white rounded-lg shadow-lg p-8">
-                                <h2 class="text-2xl font-bold mb-4" data-en="Schedule a Free Consultation" data-de="Kostenlose Beratung Terminieren">Schedule a Free Consultation</h2>
-                                <p class="text-gray-600 mb-6" data-en="Book a 30-minute consultation to discuss your training needs" data-de="Buchen Sie ein 30-minütiges Beratungsgespräch, um Ihre Trainingsbedürfnisse zu besprechen">Book a 30-minute consultation to discuss your training needs</p>
-                                
-                                <!-- Calendar Embed Placeholder -->
-                                <div class="calendar-container">
-                                    <div class="text-center py-12 border-2 border-dashed border-gray-300 rounded-lg">
-                                        <i class="fas fa-calendar-alt text-4xl mb-4 block"></i>
-                                        <p class="text-gray-500 mb-4" data-en="Calendar integration will be embedded here" data-de="Kalenderintegration wird hier eingebettet">Calendar integration will be embedded here</p>
-                                        <button class="btn-primary" data-en="Book Consultation" data-de="Beratung Buchen">Book Consultation</button>
-                                        <p class="text-xs text-gray-400 mt-2" data-en="(Calendly or similar booking system)" data-de="(Calendly oder ähnliches Buchungssystem)">(Calendly or similar booking system)</p>
                                     </div>
                                 </div>
                             </div>

@@ -246,14 +246,8 @@ class ProTrainersApp {
     }
 
     setupCalendarBooking() {
-        const calendarContainer = document.querySelector('.calendar-container');
-        const bookBtn = calendarContainer?.querySelector('button');
-        
-        if (bookBtn) {
-            bookBtn.addEventListener('click', () => {
-                this.openCalendarBooking();
-            });
-        }
+        // Initialize the new calendar booking widget
+        this.initCalendarWidget();
     }
 
     openCalendarBooking() {
@@ -352,7 +346,10 @@ class ProTrainersApp {
     // Utility methods
     showLoading(element) {
         if (element) {
-            element.innerHTML = '<div class="flex justify-center items-center py-8"><div class="spinner"></div></div>';
+            const originalText = element.textContent;
+            element.innerHTML = '<div class="booking-spinner"></div>Scheduling...';
+            element.disabled = true;
+            element.dataset.originalText = originalText;
         }
     }
 
@@ -533,6 +530,265 @@ class ProTrainersApp {
             contact: 'Contact Us - ProTrainers Academy'
         };
         return pageTitles[pageId] || 'ProTrainers Academy';
+    }
+
+    // Calendar Widget Methods
+    initCalendarWidget() {
+        // Calendar widget state
+        this.calendarState = {
+            currentDate: new Date(),
+            selectedDate: null,
+            selectedTime: null,
+            step: 'date', // 'date', 'time', 'details', 'success'
+            availableDates: [9, 13, 16, 17, 18, 19, 20, 23, 24, 25, 26, 27, 30],
+            timeSlots: [
+                '9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM',
+                '11:00 AM', '11:30 AM', '1:00 PM', '1:30 PM',
+                '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM'
+            ]
+        };
+
+        this.setupCalendarEventListeners();
+        this.renderCalendarDays();
+    }
+
+    setupCalendarEventListeners() {
+        // Month navigation
+        document.getElementById('prev-month')?.addEventListener('click', () => {
+            this.calendarState.currentDate.setMonth(this.calendarState.currentDate.getMonth() - 1);
+            this.renderCalendarDays();
+            this.updateMonthDisplay();
+        });
+
+        document.getElementById('next-month')?.addEventListener('click', () => {
+            this.calendarState.currentDate.setMonth(this.calendarState.currentDate.getMonth() + 1);
+            this.renderCalendarDays();
+            this.updateMonthDisplay();
+        });
+
+        // Step navigation
+        document.getElementById('back-to-date')?.addEventListener('click', () => {
+            this.showStep('date');
+        });
+
+        document.getElementById('back-to-time')?.addEventListener('click', () => {
+            this.showStep('time');
+        });
+
+        // Form submission
+        document.getElementById('booking-form')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.handleBookingSubmit();
+        });
+
+        // Book another button
+        document.getElementById('book-another')?.addEventListener('click', () => {
+            this.resetBookingWidget();
+        });
+    }
+
+    renderCalendarDays() {
+        const calendarDays = document.getElementById('calendar-days');
+        if (!calendarDays) return;
+
+        const year = this.calendarState.currentDate.getFullYear();
+        const month = this.calendarState.currentDate.getMonth();
+        
+        // Get first day of month and number of days
+        const firstDay = new Date(year, month, 1);
+        const lastDay = new Date(year, month + 1, 0);
+        const daysInMonth = lastDay.getDate();
+        const startingDayOfWeek = firstDay.getDay();
+
+        calendarDays.innerHTML = '';
+
+        // Add empty cells for days before the first day of the month
+        for (let i = 0; i < startingDayOfWeek; i++) {
+            const emptyCell = document.createElement('div');
+            calendarDays.appendChild(emptyCell);
+        }
+
+        // Add days of the month
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dayCell = document.createElement('div');
+            dayCell.className = 'relative py-2';
+            
+            const dayButton = document.createElement('button');
+            dayButton.className = 'mx-auto flex h-10 w-10 items-center justify-center rounded-full text-sm transition-all duration-200';
+            dayButton.textContent = day;
+
+            const isAvailable = this.calendarState.availableDates.includes(day);
+            const isToday = day === 5; // June 5th is today for demo
+
+            if (isAvailable) {
+                dayButton.className += ' hover:bg-primary hover:text-white text-primary bg-blue-50 hover:scale-110 hover:shadow-md cursor-pointer';
+                dayButton.addEventListener('click', () => this.selectDate(day));
+            } else {
+                dayButton.className += ' text-gray-400 cursor-not-allowed';
+                dayButton.disabled = true;
+            }
+
+            if (isToday) {
+                dayButton.className += ' ring-2 ring-primary ring-offset-2';
+            }
+
+            dayCell.appendChild(dayButton);
+            calendarDays.appendChild(dayCell);
+        }
+
+        this.updateMonthDisplay();
+    }
+
+    updateMonthDisplay() {
+        const monthDisplay = document.getElementById('current-month');
+        if (monthDisplay) {
+            const options = { month: 'long', year: 'numeric' };
+            monthDisplay.textContent = this.calendarState.currentDate.toLocaleDateString('en-US', options);
+        }
+    }
+
+    selectDate(day) {
+        this.calendarState.selectedDate = day;
+        this.renderTimeSlots();
+        this.showStep('time');
+        
+        // Update selected date display
+        const dateDisplay = document.getElementById('selected-date-display');
+        if (dateDisplay) {
+            const selectedDate = new Date(this.calendarState.currentDate.getFullYear(), this.calendarState.currentDate.getMonth(), day);
+            dateDisplay.textContent = selectedDate.toLocaleDateString('en-US', { 
+                month: 'long', 
+                day: 'numeric', 
+                year: 'numeric' 
+            });
+        }
+    }
+
+    renderTimeSlots() {
+        const timeSlotsContainer = document.getElementById('time-slots');
+        if (!timeSlotsContainer) return;
+
+        timeSlotsContainer.innerHTML = '';
+
+        this.calendarState.timeSlots.forEach(time => {
+            const timeButton = document.createElement('button');
+            timeButton.className = 'time-slot justify-start py-4 px-4 text-left border border-gray-300 rounded-md hover:border-primary hover:bg-primary hover:text-white transition-all duration-200 hover:scale-105 hover:shadow-md';
+            timeButton.textContent = time;
+            timeButton.addEventListener('click', () => this.selectTime(time));
+            timeSlotsContainer.appendChild(timeButton);
+        });
+    }
+
+    selectTime(time) {
+        this.calendarState.selectedTime = time;
+        this.updateBookingSummary();
+        this.showStep('details');
+    }
+
+    updateBookingSummary() {
+        const summaryDate = document.getElementById('booking-summary-date');
+        const summaryTime = document.getElementById('booking-summary-time');
+        
+        if (summaryDate && summaryTime) {
+            const selectedDate = new Date(this.calendarState.currentDate.getFullYear(), this.calendarState.currentDate.getMonth(), this.calendarState.selectedDate);
+            summaryDate.textContent = selectedDate.toLocaleDateString('en-US', { 
+                month: 'long', 
+                day: 'numeric', 
+                year: 'numeric' 
+            });
+            summaryTime.textContent = `${this.calendarState.selectedTime} - Central European Time`;
+        }
+    }
+
+    showStep(step) {
+        this.calendarState.step = step;
+        
+        // Hide all steps
+        document.querySelectorAll('.booking-step').forEach(stepEl => {
+            stepEl.classList.add('hidden');
+        });
+
+        // Show current step
+        const currentStep = document.getElementById(`${step}-step`);
+        if (currentStep) {
+            currentStep.classList.remove('hidden');
+        }
+    }
+
+    handleBookingSubmit() {
+        // Get form data
+        const formData = {
+            firstName: document.getElementById('first-name').value,
+            lastName: document.getElementById('last-name').value,
+            email: document.getElementById('email').value,
+            company: document.getElementById('company').value,
+            message: document.getElementById('message').value,
+            date: this.calendarState.selectedDate,
+            time: this.calendarState.selectedTime
+        };
+
+        // Simulate booking submission
+        this.showLoading(document.getElementById('schedule-btn'));
+        
+        setTimeout(() => {
+            this.showBookingSuccess(formData);
+        }, 2000);
+    }
+
+    showBookingSuccess(formData) {
+        // Restore button state
+        const submitBtn = document.getElementById('schedule-btn');
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = submitBtn.dataset.originalText || 'Schedule Consultation';
+        }
+
+        // Update final summary with animation
+        const finalSummary = document.getElementById('final-booking-summary');
+        if (finalSummary) {
+            const selectedDate = new Date(this.calendarState.currentDate.getFullYear(), this.calendarState.currentDate.getMonth(), this.calendarState.selectedDate);
+            finalSummary.innerHTML = `
+                <div class="mb-2">
+                    <strong>Date:</strong> ${selectedDate.toLocaleDateString('en-US', { 
+                        weekday: 'long',
+                        month: 'long', 
+                        day: 'numeric', 
+                        year: 'numeric' 
+                    })}
+                </div>
+                <div class="mb-2">
+                    <strong>Time:</strong> ${this.calendarState.selectedTime} (CET)
+                </div>
+                <div class="mb-2">
+                    <strong>Attendee:</strong> ${formData.firstName} ${formData.lastName}
+                </div>
+                <div class="mb-2">
+                    <strong>Email:</strong> ${formData.email}
+                </div>
+                ${formData.company ? `<div class="mb-2"><strong>Company:</strong> ${formData.company}</div>` : ''}
+            `;
+        }
+
+        // Add success animation to check icon
+        const checkIcon = document.querySelector('#success-step .fas.fa-check-circle');
+        if (checkIcon) {
+            checkIcon.classList.add('success-check');
+        }
+
+        this.showStep('success');
+    }
+
+    resetBookingWidget() {
+        // Reset state
+        this.calendarState.selectedDate = null;
+        this.calendarState.selectedTime = null;
+        this.calendarState.step = 'date';
+        
+        // Clear form
+        document.getElementById('booking-form')?.reset();
+        
+        // Show date step
+        this.showStep('date');
     }
 }
 
