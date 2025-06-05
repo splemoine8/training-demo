@@ -90,7 +90,10 @@ html {
 
 .method-step::before {
     content: '';
-    @apply absolute left-8 top-16 w-0.5 h-full bg-gray-300;
+    @apply absolute w-0.5 bg-gray-300;
+    left: 32px; /* Center of 64px circle */
+    top: 80px; /* After circle + margin */
+    height: calc(100% - 64px);
 }
 
 .method-step:last-child::before {
@@ -203,9 +206,32 @@ body.german .lang-de {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* Method step connector line improvements */
+/* Method step circle alignment fix */
+.method-step {
+    position: relative;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.method-step .flex-shrink-0 {
+    width: 64px;
+    min-width: 64px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.method-step .w-16.h-16 {
+    width: 64px !important;
+    height: 64px !important;
+    margin: 0 !important;
+    position: relative;
+}
+
+/* Ensure connecting lines don't affect circle positioning */
 .method-step::before {
     z-index: -1;
+    position: absolute;
 }
 
 /* Responsive improvements */
