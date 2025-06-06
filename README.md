@@ -3,7 +3,7 @@
 *A fully-featured, responsive, bilingual single-page application (SPA) built with nothing but vanilla HTML, CSS, and JavaScript.*
 
 ![MIT Licence](https://img.shields.io/badge/License-MIT-blue.svg)
-![GitHub Pages Deploy](https://github.com/splemoine8/training-demo/actions/workflows/pages-build-deployment.yml/badge.svg?branch=main)
+[![pages-build-deployment](https://github.com/splemoine8/training-demo/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main)](https://github.com/splemoine8/training-demo/actions/workflows/pages/pages-build-deployment)
 
 [**🌐 Live Demo**](https://splemoine8.github.io/training-demo/)
 
