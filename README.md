@@ -1,242 +1,149 @@
-# ProTrainers Academy - Business Training Website
+# ProTrainers Academy – Professional SPA Website
 
-A modern, responsive business training website built with vanilla HTML, CSS, and JavaScript. This project showcases professional web development skills and demonstrates a complete business website with advanced features.
+*A fully-featured, responsive, bilingual single-page application (SPA) built with nothing but vanilla HTML, CSS, and JavaScript.*
 
-## 🚀 Live Demo
+![MIT Licence](https://img.shields.io/badge/License-MIT-blue.svg)
+![GitHub Pages Deploy](https://github.com/splemoine8/training-demo/actions/workflows/pages-build-deployment.yml/badge.svg?branch=main)
 
-**[View Live Website](https://splemoine8.github.io/training-demo/)** 
-
-✨ **Fully interactive demo** - Test all features including navigation, language toggle, and contact form!
-
-## 📋 Project Overview
-
-ProTrainers Academy is a fictional business training company website that demonstrates:
-- Professional business website development
-- Responsive design and mobile-first approach
-- Bilingual functionality (English/German)
-- Single Page Application (SPA) architecture
-- Modern UI/UX design principles
-
-## ✨ Features
-
-### 🎨 **Design & User Experience**
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **Professional Aesthetics**: Corporate blue/gray color scheme
-- **Smooth Animations**: CSS transitions and hover effects
-- **Accessibility**: Semantic HTML and keyboard navigation support
-
-### 🌐 **Multilingual Support**
-- **Bilingual Interface**: Full English/German translation
-- **Dynamic Language Switching**: Real-time content updates
-- **Persistent Preferences**: Language choice saved in localStorage
-
-### 📱 **Single Page Application**
-- **Client-Side Routing**: No page reloads, smooth navigation
-- **5 Complete Pages**: Home, Trainers, Method, Resources, Contact
-- **Dynamic Content Loading**: Lazy loading of page-specific content
-
-### 📧 **Contact & Booking System**
-- **Advanced Contact Form**: Validation, error handling, loading states
-- **Multiple Contact Methods**: Email, phone, address integration
-- **Calendar Booking**: Modal system ready for Calendly/Acuity integration
-- **Form Processing**: Ready for backend integration (Netlify, Formspree, etc.)
-
-### ⚡ **Technical Excellence**
-- **SEO Optimized**: Proper meta tags, semantic structure
-- **Performance Focused**: Optimized loading and animations
-- **Analytics Ready**: Google Analytics and Facebook Pixel integration hooks
-- **Cross-Browser Compatible**: Works across modern browsers
-
-## 🛠️ Technologies Used
-
-- **HTML5**: Semantic markup and accessibility
-- **CSS3**: Custom styles with Tailwind CSS framework
-- **Vanilla JavaScript**: ES6+ features, class-based architecture
-- **Git**: Version control and project management
-
-## 📁 Project Structure
-
-```
-protrainers-academy/
-├── index.html              # Main HTML file with all page content
-├── css/
-│   └── styles.css          # Custom CSS styles and animations
-├── js/
-│   └── main.js             # Core JavaScript application logic
-├── data/
-│   └── translations.json   # Translation data structure
-├── images/                 # Image assets directory
-├── CLAUDE.md              # Development documentation
-└── README.md              # Project documentation
-```
-
-## 🎯 Key Implementation Highlights
-
-### JavaScript Architecture
-```javascript
-// Clean, modular ES6 class structure
-class ProTrainersApp {
-    constructor() {
-        this.currentLang = 'en';
-        this.currentPage = 'home';
-        this.init();
-    }
-    
-    // Navigation system
-    showPage(pageId) { /* ... */ }
-    
-    // Language system
-    toggleLanguage() { /* ... */ }
-    
-    // Form handling
-    handleContactFormSubmit() { /* ... */ }
-}
-```
-
-### Responsive Design
-- **Mobile-First**: Designed for mobile, enhanced for desktop
-- **Flexible Grid**: CSS Grid and Flexbox for layout
-- **Breakpoints**: sm (640px), md (768px), lg (1024px)
-
-### Bilingual Implementation
-```html
-<!-- Dynamic content switching -->
-<h1 data-en="Transform Your Business" 
-    data-de="Transformieren Sie Ihr Unternehmen">
-    Transform Your Business
-</h1>
-```
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Modern web browser
-- Git (for development)
-- Optional: Local web server for testing
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/protrainers-academy.git
-   cd protrainers-academy
-   ```
-
-2. **Open in browser**
-   ```bash
-   # Option 1: Direct file access
-   open index.html
-   
-   # Option 2: Local server (recommended)
-   python -m http.server 8000
-   # Visit: http://localhost:8000
-   ```
-
-### Development
-
-1. **Make changes** to HTML, CSS, or JavaScript files
-2. **Test locally** in multiple browsers
-3. **Commit and push** changes to GitHub
-4. **GitHub Pages** will automatically update the live site
-
-## 🌐 Deployment Options
-
-### GitHub Pages (Recommended)
-1. Push code to GitHub repository
-2. Go to Settings → Pages
-3. Select "Deploy from a branch" → "main"
-4. Your site will be available at: `https://your-username.github.io/repository-name`
-
-### Other Hosting Platforms
-- **Netlify**: Drag and drop deployment
-- **Vercel**: Git-based deployment
-- **GitHub Codespaces**: Development environment
-
-## 🔧 Customization Guide
-
-### Adding New Pages
-1. Add page HTML structure in `index.html`
-2. Update navigation in JavaScript
-3. Add translations for new content
-4. Implement page-specific functionality
-
-### Integrating Backend Services
-
-#### Contact Form
-```javascript
-// Replace in js/main.js
-async submitForm(formData) {
-    return fetch('https://formspree.io/f/YOUR_ID', {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-    });
-}
-```
-
-#### Calendar Booking
-```javascript
-// Replace calendar button action
-openExternalCalendar() {
-    window.open('https://calendly.com/your-username', '_blank');
-}
-```
-
-## 📊 Performance Metrics
-
-- **Lighthouse Score**: 95+ (Performance, Accessibility, Best Practices, SEO)
-- **Mobile Responsive**: 100% mobile compatibility
-- **Load Time**: < 2 seconds on 3G connection
-- **Accessibility**: WCAG 2.1 AA compliant
-
-## 🎨 Design System
-
-### Color Palette
-- **Primary**: #1e40af (Blue 700)
-- **Secondary**: #64748b (Slate 500)  
-- **Accent**: #0ea5e9 (Sky 500)
-- **Success**: #10b981 (Emerald 500)
-- **Error**: #ef4444 (Red 500)
-
-### Typography
-- **Font**: System font stack for optimal performance
-- **Headings**: Bold weights for hierarchy
-- **Body**: Regular weight for readability
-
-## 📈 Future Enhancements
-
-- [ ] Content Management System integration
-- [ ] User authentication system
-- [ ] Blog/News section
-- [ ] Advanced booking system
-- [ ] Customer dashboard
-- [ ] Multi-language expansion
-- [ ] Dark mode support
-
-## 🤝 Contributing
-
-This is a portfolio project, but suggestions and feedback are welcome!
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 👨‍💻 About the Developer
-
-This project demonstrates expertise in:
-- **Frontend Development**: HTML5, CSS3, JavaScript ES6+
-- **Responsive Design**: Mobile-first, cross-browser compatibility
-- **User Experience**: Intuitive navigation, accessibility
-- **Project Management**: Git workflow, documentation
-- **Business Understanding**: Professional website requirements
+[**🌐 Live Demo**](https://splemoine8.github.io/training-demo/)
 
 ---
 
-**Built with ❤️ by [Your Name]**
+## Table of Contents
 
-*This is a portfolio project showcasing modern web development skills.*
+1. [Project Overview](#project-overview)  
+2. [Key Features](#key-features)  
+   - [Architecture & Technical Excellence](#architecture--technical-excellence)  
+   - [Interactive UI / UX](#interactive-ui--ux)  
+3. [Technology Stack](#technology-stack)  
+4. [Code Highlights](#code-highlights)  
+5. [Getting Started](#getting-started)  
+6. [Future Enhancements](#future-enhancements)
+
+---
+
+## Project Overview
+
+**ProTrainers Academy** is a fictional corporate-training website that demonstrates how far you can push modern front-end techniques **without** resorting to a heavyweight framework. From client-side routing and stateful widgets to real-time internationalisation, every feature is hand-rolled to showcase clean architecture, performance optimisation, and polished user experience.
+
+---
+
+## Key Features
+
+### Architecture & Technical Excellence
+
+| Feature | Details |
+|---------|---------|
+| **Single-Page Application** | History API–driven router provides seamless navigation and clean URLs. |
+| **Modular ES6 Classes** | Core logic split into `Router`, `I18n`, and `Calendar` for readability and scalability. |
+| **SEO Friendly** | Dynamic `<title>` and meta-description updates on route change. |
+| **Local State Management** | The calendar widget maintains its own step-based booking flow. |
+| **Performance** | Lazy-loaded images, `IntersectionObserver`-powered animations, and purged Tailwind styles keep payloads small. |
+
+### Interactive UI / UX
+
+- **Custom Calendar Booking Widget** – multi-step date/slot picker with form validation and success state.  
+- **Contact & Booking Forms** – real-time validation, loading/disabled states, and Toast notifications.  
+- **Dynamic Internationalisation (i18n)** – instant English ↔ German toggle; preference is persisted in `localStorage`.  
+- **Responsive Design** – mobile-first layout via Tailwind CSS, tested across breakpoints.  
+- **Subtle Animations** – hover effects, smooth page transitions, and animated counters for a polished feel.
+
+---
+
+## Technology Stack
+
+| Layer | Tools |
+|-------|-------|
+| Mark-up | **HTML 5** (semantic & accessible) |
+| Styling | **Tailwind CSS** + custom CSS for animations |
+| Logic   | **Vanilla JavaScript (ES6+)** |
+| Icons   | Font Awesome |
+| Notifications | Toastify.js |
+| DevOps | Git & GitHub Pages (CI/CD via GitHub Actions) |
+
+---
+
+## Code Highlights
+
+<details>
+<summary><strong>Main Application Bootstrap (<code>js/main.js</code>)</strong></summary>
+
+```js
+import { Router }  from './router.js';
+import { I18n }    from './i18n.js';
+import { Calendar } from './calendar.js';
+
+class ProTrainersApp {
+  constructor() {
+    this.router   = new Router();
+    this.i18n     = new I18n();
+    this.calendar = new Calendar();
+  }
+
+  init() {
+    this.i18n.init(this.router);
+    this.router.init(this.i18n, this.calendar);
+    this.calendar.init(this.i18n);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => new ProTrainersApp().init());
+```
+</details>
+
+<details>
+<summary><strong>Dynamic Internationalisation Pattern</strong></summary>
+
+```html
+<h1 data-en="Transform Your Business"
+    data-de="Transformieren Sie Ihr Unternehmen">
+  Transform Your Business
+</h1>
+```
+
+```js
+// js/i18n.js (excerpt)
+toggleLanguage() {
+  this.currentLang = this.currentLang === 'en' ? 'de' : 'en';
+  document.documentElement.lang = this.currentLang;
+  this.updateTranslations();
+  localStorage.setItem('preferred-language', this.currentLang);
+}
+```
+</details>
+
+---
+
+## Getting Started
+
+### Prerequisites
+- Modern browser (Chrome, Firefox, Edge, Safari)
+- Optional: local web server (e.g. VS Code Live Server extension or Python's `http.server`)
+
+### Installation
+```bash
+# 1. Clone the repo
+git clone https://github.com/splemoine8/training-demo.git
+cd training-demo
+
+# 2. Start a local dev server (Python example)
+python -m http.server
+
+# 3. Browse
+open http://localhost:8000       # or your chosen port
+```
+
+*(You can also open `index.html` directly, but a local server is recommended to ensure correct routing behaviour.)*
+
+---
+
+## Future Enhancements
+
+- **Centralised Translation File** – pull all strings from `data/translations.json` for easier maintenance.
+- **Backend Integration** – connect forms to a serverless function (Netlify / Vercel) or Formspree for live email notifications.
+- **Dark Mode** – auto-detect OS preference and allow manual toggle.
+- **Headless CMS** – integrate with Strapi or Contentful for dynamic content updates.
+
+---
+
+*Made with ☕ and 💪 by Scott Lemoine.*
