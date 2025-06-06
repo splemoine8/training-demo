@@ -150,7 +150,7 @@ html {
 /* Hero section with background image */
 .hero-section {
     position: relative;
-    background-image: url('../images/hero_shrunk.jpg');
+    background-image: url('../images/hero_shrunk.webp');
     background-size: cover;
     background-position: center top 35%;
     background-repeat: no-repeat;
