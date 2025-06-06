@@ -4,6 +4,28 @@ class ProTrainersApp {
     constructor() {
         this.currentLang = 'en';
         this.currentPage = 'home';
+        this.metaDescriptions = {
+            home: {
+                en: 'ProTrainers Academy - Professional business training and development solutions for corporate success and leadership excellence.',
+                de: 'ProTrainers Academy - Professionelle Unternehmensschulungen und Entwicklungslösungen für unternehmerischen Erfolg und Führungsexzellenz.'
+            },
+            trainers: {
+                en: 'Meet our expert business trainers with decades of experience in corporate training and professional development.',
+                de: 'Lernen Sie unsere erfahrenen Unternehmenstrainer mit jahrzehntelanger Erfahrung in Unternehmensschulungen und beruflicher Entwicklung kennen.'
+            },
+            method: {
+                en: 'Discover our proven training methodology combining theory with practical application for lasting business transformation.',
+                de: 'Entdecken Sie unsere bewährte Trainingsmethodik, die Theorie mit praktischer Anwendung für nachhaltige Unternehmenstransformation verbindet.'
+            },
+            resources: {
+                en: 'Access comprehensive training resources, tools, and materials to support your professional development journey.',
+                de: 'Zugang zu umfassenden Trainingsressourcen, Tools und Materialien zur Unterstützung Ihrer beruflichen Entwicklungsreise.'
+            },
+            contact: {
+                en: 'Get in touch with ProTrainers Academy to discuss your training needs and schedule a consultation.',
+                de: 'Kontaktieren Sie die ProTrainers Academy, um Ihre Schulungsbedürfnisse zu besprechen und eine Beratung zu vereinbaren.'
+            }
+        };
         this.init();
     }
 
@@ -19,11 +41,21 @@ class ProTrainersApp {
 
     setupEventListeners() {
         document.addEventListener('DOMContentLoaded', () => {
-            this.showPage('home');
+            this.initializeFromURL();
         });
 
         window.addEventListener('resize', () => {
             this.handleResize();
+        });
+
+        // Handle browser back/forward navigation
+        window.addEventListener('popstate', (event) => {
+            if (event.state && event.state.page) {
+                this.showPage(event.state.page, false); // false = don't update history
+            } else {
+                // Handle direct URL access or no state
+                this.initializeFromURL();
+            }
         });
     }
 
@@ -42,7 +74,7 @@ class ProTrainersApp {
         });
     }
 
-    showPage(pageId) {
+    showPage(pageId, updateHistory = true) {
         // Hide all pages
         const pages = document.querySelectorAll('.page');
         pages.forEach(page => {
@@ -57,11 +89,20 @@ class ProTrainersApp {
             targetPage.classList.add('active');
             this.currentPage = pageId;
             
+            // Update browser history and URL
+            if (updateHistory) {
+                const url = pageId === 'home' ? '/' : `#${pageId}`;
+                history.pushState({page: pageId}, '', url);
+            }
+            
             // Scroll to top
             window.scrollTo(0, 0);
             
             // Update page title
             this.updatePageTitle(pageId);
+            
+            // Update meta description
+            this.updateMetaDescription();
             
             // Track page view
             this.trackPageView(pageId);
@@ -119,8 +160,14 @@ class ProTrainersApp {
         this.currentLang = this.currentLang === 'en' ? 'de' : 'en';
         document.body.classList.toggle('german', this.currentLang === 'de');
         
+        // Update document language for screen readers
+        document.documentElement.lang = this.currentLang;
+        
         // Update all translatable elements
         this.updateTranslations();
+        
+        // Update meta description for current page
+        this.updateMetaDescription();
         
         // Store language preference
         localStorage.setItem('preferred-language', this.currentLang);
@@ -142,6 +189,7 @@ class ProTrainersApp {
         if (savedLang && savedLang !== this.currentLang) {
             this.currentLang = savedLang;
             document.body.classList.toggle('german', this.currentLang === 'de');
+            document.documentElement.lang = this.currentLang;
             this.updateTranslations();
         }
     }
@@ -534,6 +582,23 @@ class ProTrainersApp {
         });
     }
 
+    initializeFromURL() {
+        // Get page from URL hash or default to home
+        const hash = window.location.hash.slice(1); // Remove # symbol
+        const validPages = ['home', 'trainers', 'method', 'resources', 'contact'];
+        const pageId = validPages.includes(hash) ? hash : 'home';
+        
+        this.showPage(pageId, false); // Don't update history on initial load
+    }
+
+    updateMetaDescription() {
+        const metaDescription = document.querySelector('meta[name="description"]');
+        if (metaDescription && this.metaDescriptions[this.currentPage]) {
+            const description = this.metaDescriptions[this.currentPage][this.currentLang];
+            metaDescription.setAttribute('content', description);
+        }
+    }
+
     getPageTitle(pageId) {
         const pageTitles = {
             home: 'Home - ProTrainers Academy',
@@ -629,20 +694,34 @@ class ProTrainersApp {
             const dayButton = document.createElement('button');
             dayButton.className = 'mx-auto flex h-10 w-10 items-center justify-center rounded-full text-sm transition-all duration-200';
             dayButton.textContent = day;
+            
+            // Add unique ID and ARIA label for accessibility
+            const dateObj = new Date(year, month, day);
+            const dateString = dateObj.toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                month: 'long', 
+                day: 'numeric', 
+                year: 'numeric' 
+            });
+            dayButton.id = `calendar-day-${year}-${month}-${day}`;
+            dayButton.setAttribute('aria-label', `Select ${dateString}`);
 
             const isAvailable = this.calendarState.availableDates.includes(day);
             const isToday = day === 5; // June 5th is today for demo
 
             if (isAvailable) {
                 dayButton.className += ' hover:bg-primary hover:text-white text-primary bg-blue-50 hover:scale-110 hover:shadow-md cursor-pointer';
+                dayButton.setAttribute('aria-describedby', 'available-date-help');
                 dayButton.addEventListener('click', () => this.selectDate(day));
             } else {
                 dayButton.className += ' text-gray-400 cursor-not-allowed';
                 dayButton.disabled = true;
+                dayButton.setAttribute('aria-label', `${dateString} - Not available`);
             }
 
             if (isToday) {
                 dayButton.className += ' ring-2 ring-primary ring-offset-2';
+                dayButton.setAttribute('aria-label', `${dateString} - Today`);
             }
 
             dayCell.appendChild(dayButton);
@@ -725,6 +804,21 @@ class ProTrainersApp {
         const currentStep = document.getElementById(`${step}-step`);
         if (currentStep) {
             currentStep.classList.remove('hidden');
+            
+            // Add ARIA attributes for screen readers
+            if (!currentStep.getAttribute('role')) {
+                currentStep.setAttribute('role', 'region');
+            }
+            if (!currentStep.getAttribute('aria-labelledby')) {
+                // Set aria-labelledby to the step's heading
+                const heading = currentStep.querySelector('h2, h3');
+                if (heading && !heading.id) {
+                    heading.id = `${step}-step-heading`;
+                }
+                if (heading) {
+                    currentStep.setAttribute('aria-labelledby', heading.id);
+                }
+            }
         }
     }
 
